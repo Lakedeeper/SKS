@@ -3,7 +3,14 @@ import './LoginStudents.css'
 
 function LoginStudents() {
   return (
-    <div>selam</div>
+    <div className='containerLoginStudents'>
+        <div>
+            <p>Log in</p>
+            <input type="text" placeholder='Student ID'/>
+            <input type="text" placeholder='Password'/>
+            <button>Log in</button>
+        </div>
+    </div>
   )
 }
 
