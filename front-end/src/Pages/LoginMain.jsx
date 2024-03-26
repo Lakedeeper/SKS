@@ -5,15 +5,11 @@ function LoginMain() {
   return (
     <div className='container'>
         <div className='LoginTypes'>
-            <button>SKS ADMIN</button>
-            <button>CLUB MANAGER</button>
-            <button>STUDENT</button>
+            <button className='button1'>SKS ADMIN</button>
+            <button className='button1'>CLUB MANAGER</button>
+            <button className='button1'>STUDENT</button>
+            <button className='WithoutLogin'>continue without login</button>
         </div>
-
-        <div className='WithoutLogin'>
-            <button>continue without login</button>
-        </div>
-
     </div>
   )
 }
