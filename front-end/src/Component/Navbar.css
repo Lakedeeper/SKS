@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #c0e4d6;
+}
+.LinkDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+@media (max-width: 768px) {
+  .LinkDiv {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.nav-link {
+  color: #113d43;
+  text-decoration: none;
+}
+
+.logo {
+  height: 60px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    margin-bottom: 10px;
+  }
+}
