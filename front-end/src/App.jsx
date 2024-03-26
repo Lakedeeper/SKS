@@ -1,13 +1,13 @@
-import './App.css'
-
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
-
-
   return (
-    <>
-     
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Blogs />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
