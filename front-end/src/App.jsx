@@ -5,6 +5,7 @@ import Navbar from "./Component/Navbar";
 import LoginStudents from "./Pages/LoginStudents";
 import Events from "./Pages/Events";
 import Clubs from "./Pages/Clubs";
+import Form from "./Pages/Form";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Clubs" element={<Clubs />} />
         <Route path="/LoginStudents" element={<LoginStudents />} />
         <Route path="/Events" element={<Events />} />
+        <Route path="/Form" element={<Form/>} />
       </Routes>
     </BrowserRouter>
   );

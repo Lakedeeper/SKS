@@ -17,7 +17,7 @@ function Navbar() {
           <NavLink to="/" className="nav-link">
             Contact Us
           </NavLink>
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/Events" className="nav-link">
             Events
           </NavLink>
         </div>
