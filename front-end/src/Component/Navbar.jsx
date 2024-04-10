@@ -14,7 +14,7 @@ function Navbar() {
           <NavLink to="/" className="nav-link">
             Announcements
           </NavLink>
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/ContactUs" className="nav-link">
             Contact Us
           </NavLink>
           <NavLink to="/Events" className="nav-link">
