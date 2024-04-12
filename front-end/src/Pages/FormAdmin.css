@@ -1,0 +1,46 @@
+.FormAdminHeader{
+    margin: 30px;
+    font-size: xx-large;
+}
+.cardContainerFormAdmin{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   
+}
+.containestFormAdmin{
+    display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.containerformAdmin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #c0e4d6;
+    border-radius: 20px;
+    height: 200px;
+    
+}
+.imgFormAdmin{
+    height: 150px;
+    width: 200px;
+    margin-left: 15px;
+    border-radius: 50%;
+}
+
+.textFormAdmin{
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    margin: 0 30px;
+}
+
+.buttonFormAdmin button{
+    border-radius: 20px;
+    padding: 3px 20px;
+    margin-right: 15px;
+    background-color: aliceblue;
+}
