@@ -7,25 +7,29 @@ function Clubs() {
     {
       id: "1",
       baslik: "Kart Başlık 1",
-      icerik: "Kart içeriği buraya gelebilir.",
+      icerik: "Kart içeriği buraya gelebilir1.",
       resim:
         "https://uskudar.edu.tr/assets/uploads/ogrencikulup/222/uskubat-kulubu.png",
     },
     {
       id: "2",
       baslik: "Kart Başlık 2",
-      icerik: "Kart içeriği buraya gelebilir.",
+      icerik: "Kart içeriği buraya gelebilir2.",
       resim:
         "https://uskudar.edu.tr/assets/uploads/ogrencikulup/195/insani-degerler-ve-etik-kulubu.jpg",
     },
     {
-      id: "2",
+      id: "3",
       baslik: "Kart Başlık 3",
-      icerik: "Kart içeriği buraya gelebilir.",
+      icerik: "Kart içeriği buraya gelebilir3.",
       resim:
         "https://uskudar.edu.tr/assets/uploads/ogrencikulup/214/fablab-girisimcilik-kulubu.PNG",
     },
   ]);
+
+  const [selectedClub, setSelectedClub] = useState(null); //arif burada klüp bilgilerini tutuyoruz modalda kullanıcaz :)
+
+  console.log(selectedClub);
 
   useEffect(() => {
     // axios
@@ -49,21 +53,69 @@ function Clubs() {
                 <h5 className="card-title">{clubs.baslik}</h5>
                 <p className="card-text">{clubs.icerik}</p>
                 <div>
-                  <a
-                    href="#"
-                    className="btn "
-                    style={{ width: "100%", backgroundColor: "#C0E4D6" }}
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                    style={{
+                      width: "100%",
+                      backgroundColor: "#C0E4D6",
+                      color: "black",
+                    }}
+                    onClick={() => setSelectedClub(clubs)}
                   >
-                    Daha Fazla
-                  </a>
+                    Kulüp Detay
+                  </button>
+
+                  {/* Modal */}
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+      <div
+        className="modal fade "
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabIndex={-1}
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                {selectedClub !== null ? selectedClub.baslik : ""}
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                onClick={() => setSelectedClub(null)}
+              />
+            </div>
+            <div className="modal-body">
+              {selectedClub !== null ? selectedClub.icerik : ""}
+            </div>
+            <div className="modal-footer"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Clubs;
+{
+  /* <a
+                    href="#"
+                    className="btn"
+                    style={{ width: "100%", backgroundColor: "#C0E4D6" }}
+                  >
+                    Daha Fazla
+                  </a> */
+}
