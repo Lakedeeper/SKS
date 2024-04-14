@@ -90,7 +90,7 @@ function Clubs() {
     <img
         src={selectedClub !== null ? selectedClub.resim : ""}
         alt=""
-        style={{ width: "160px", height: "150px", marginRight: "10px" }}
+        style={{ width: "200px", height: "180px", marginRight: "10px" }}
     />
     <div className="clubs_Header">
         <h1 className="modal-title fs-5" id="staticBackdropLabel">

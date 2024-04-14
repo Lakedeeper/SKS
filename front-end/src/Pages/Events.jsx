@@ -83,11 +83,14 @@ function Events() {
             <img
         src={selectedEvent !== null ? selectedEvent.resim : ""}
         alt=""
-        style={{ width: "160px", height: "150px", marginRight: "10px" }}
+        style={{ width: "200px", height: "180px", marginRight: "10px" }}
             />
+            <div className="headerEventsModal">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 {selectedEvent !== null ? selectedEvent.baslik : ""}
               </h1>
+              <p>Öğretim üyesi : /isim soyisim/</p>
+              </div>
               <button
                 type="button"
                 className="btn-close"
@@ -97,8 +100,13 @@ function Events() {
             </div>
             <div className="modal-body">
               {selectedEvent !== null ? selectedEvent.icerik : ""}
+             
             </div>
-            <div className="modal-footer"></div>
+            <p style={{marginLeft:"15px"}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam iste dignissimos minus et omnis possimus tenetur quod, magni repudiandae aliquid, autem reprehenderit optio fuga voluptatibus dolor consectetur modi, incidunt odio.</p>
+            <div className="modal-footer">
+             <h6>Event Informations:</h6> 
+            </div>
+            <p style={{marginLeft:"15px"}}>Event date and time: Tarih - Saat</p>
           </div>
         </div>
       </div>

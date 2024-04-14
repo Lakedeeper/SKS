@@ -4,3 +4,7 @@
 .cardEvent {
   cursor: pointer;
 }
+.modal-footer{
+  display: flex;
+  justify-content: center;
+}
