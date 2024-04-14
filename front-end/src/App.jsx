@@ -8,6 +8,8 @@ import Clubs from "./Pages/Clubs";
 import Form from "./Pages/Form";
 import ContactUs from "./Pages/ContactUs";
 import FormAdmin from "./Pages/FormAdmin";
+import LoginStaff from "./Pages/LoginStaff";
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +22,8 @@ function App() {
         <Route path="/Form" element={<Form/>} />
         <Route path="/ContactUs" element={<ContactUs/>} />
         <Route path="/FormAdmin" element={<FormAdmin/>} />
+        <Route path="/LoginStudents" element={<LoginStudents/>} />
+        <Route path="/LoginStaff" element={<LoginStaff/>} />
       </Routes>
     </BrowserRouter>
   );

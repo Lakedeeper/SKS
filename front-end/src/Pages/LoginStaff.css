@@ -1,11 +1,11 @@
-.containerLoginStudents {
+.containerLoginStaff {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh; 
 }
 
-.containerLoginStudents > div {
+.containerLoginStaff > div {
     text-align: center;
     width: 400px;
     height: 350px;
@@ -16,13 +16,13 @@
     justify-content: center; 
 }
 
-.containerLoginStudents p {
+.containerLoginStaff p {
     font-size: 24px;
     font-family: newsreader;
     margin-bottom: 30px;
 }
 
-.containerLoginStudents input {
+.containerLoginStaff input {
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
@@ -30,7 +30,7 @@
     align-self: center; 
 }
 
-.containerLoginStudents button {
+.containerLoginStaff button {
     padding: 6px 15px;
     border-radius: 16px;
     background-color: #F2F9F2;
@@ -42,6 +42,6 @@
     margin-bottom: 40px;
 }
 
-.containerLoginStudents button:hover {
+.containerLoginStaff button:hover {
     background-color: #d7f0eb;
 }
