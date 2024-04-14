@@ -7,7 +7,7 @@ function Clubs() {
     {
       id: "1",
       baslik: "Kart Başlık 1",
-      icerik: "Kart içeriği buraya gelebilir1.",
+      icerik: "Kart içeriği buraya gelebilir.",
       resim:
         "https://uskudar.edu.tr/assets/uploads/ogrencikulup/222/uskubat-kulubu.png",
     },
@@ -83,31 +83,36 @@ function Clubs() {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
+        
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                {selectedClub !== null ? selectedClub.baslik : ""}
-              </h1>
+          <div className="modal-header">
+    <img
+        src={selectedClub !== null ? selectedClub.resim : ""}
+        alt=""
+        style={{ width: "160px", height: "150px", marginRight: "10px" }}
+    />
+    <div className="clubs_Header">
+        <h1 className="modal-title fs-5" id="staticBackdropLabel">
+            {selectedClub !== null ? selectedClub.baslik : ""}
+        </h1>
+        <p>Club Manager: /club manager/</p>
+    </div>
 
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                onClick={() => setSelectedClub(null)}
-              />
-            </div>
+    <button
+        type="button"
+        className="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        onClick={() => setSelectedClub(null)}
+    />
+</div>
             <div className="modal-body">
-              {selectedClub !== null ? selectedClub.icerik : ""}
-
-              <img
-                src={selectedClub !== null ? selectedClub.resim : ""}
-                alt=""
-                style={{ width: "300px", height: "300px" }}
-              />
+             <p style={{margin: "10px 10px",backgroundColor:"antiquewhite",borderRadius:"10px",padding:"8px"}}>uu.sks@gmail.com</p>
+              <p style={{margin: "10px 10px"}}>Kulüp açıklaması: Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vel officiis ullam vitae inventore, culpa earum animi non nam tempore.</p>
+        
             </div>
-            <div className="modal-footer"></div>
+            
           </div>
         </div>
       </div>
