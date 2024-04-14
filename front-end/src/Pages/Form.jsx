@@ -1,9 +1,12 @@
 import React from 'react'
 import './Form.css'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PendingActionsIcon from '@mui/icons-material/PendingActions';
+import DoDisturbIcon from '@mui/icons-material/DoDisturb';
 
 function Form() {
   return (
-
+<>
   <div className='containerForm'>
         <div className='headerForm'>
             <div className='LogoForm'>
@@ -29,7 +32,26 @@ function Form() {
 
         </div>
         </div>
-   
+        <div className='HistoryForm'>
+
+            <div  className='HistoryEventForm'>
+                <div className='HistoryEventsForm'>
+                    <p>istek1</p>
+                    <p><PendingActionsIcon/></p>
+                </div>
+                <div className='HistoryEventsForm'>
+                    <p>istek1</p>
+                    <p style={{ color: 'red' }}><DoDisturbIcon/></p>
+                </div>
+                <div className='HistoryEventsForm'>
+                    <p>istek3</p>
+                    <p style={{ color: 'green' }}><CheckCircleIcon/></p>
+                </div>
+                
+            </div>
+        </div>
+
+        </>
   )
 }
 
