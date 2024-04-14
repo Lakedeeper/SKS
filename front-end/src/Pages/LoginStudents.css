@@ -1,0 +1,47 @@
+.containerLoginStudents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+
+.containerLoginStudents > div {
+    text-align: center;
+    width: 400px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: #BAD7D0;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.containerLoginStudents p {
+    font-size: 24px;
+    font-family: newsreader;
+    margin-bottom: 30px;
+}
+
+.containerLoginStudents input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    align-self: center; 
+}
+
+.containerLoginStudents button {
+    padding: 6px 15px;
+    border-radius: 16px;
+    background-color: #F2F9F2;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 60%;
+    align-self: center; 
+    margin-bottom: 40px;
+}
+
+.containerLoginStudents button:hover {
+    background-color: #d7f0eb;
+}

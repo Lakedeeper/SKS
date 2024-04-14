@@ -1,0 +1,27 @@
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Öğeleri aralarında eşit boşluk bırakacak şekilde ayarlayalım */
+}
+
+.modal-header img {
+    width: 160px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.clubs_Header {
+    flex-grow: 1;
+    text-align: center;
+  
+}
+
+.modal-header .btn-close {
+    margin-left: auto;
+}
+
+.modal-body{
+    display: flex;
+    align-items: center;
+    
+}

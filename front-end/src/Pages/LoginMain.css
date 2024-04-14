@@ -1,0 +1,42 @@
+.containerMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; 
+    margin: 0; 
+}
+
+.LoginTypes {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.button1 {
+    background-color: #BAD7D0;
+    padding: 20px;
+    margin: 12px;
+    width: 400px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s; 
+}
+
+.button1:hover {
+    background-color: #ade3d8;
+}
+
+.WithoutLogin {
+    background-color: #BAD7D0;
+    padding: 8px;
+    margin: 30px auto; 
+    width: 400px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s; 
+}

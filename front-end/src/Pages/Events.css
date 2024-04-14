@@ -1,0 +1,10 @@
+.EventsHeader {
+  margin-bottom: 60px;
+}
+.cardEvent {
+  cursor: pointer;
+}
+.modal-footer{
+  display: flex;
+  justify-content: center;
+}
