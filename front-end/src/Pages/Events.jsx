@@ -64,7 +64,6 @@ function Events() {
                 </div>
               </div>
             </a>
-            {/* modal */}
           </div>
         ))}
       </div>
@@ -92,7 +91,6 @@ function Events() {
               />
             </div>
             <div className="modal-body">
-              {" "}
               {selectedEvent !== null ? selectedEvent.icerik : ""}
             </div>
             <div className="modal-footer"></div>

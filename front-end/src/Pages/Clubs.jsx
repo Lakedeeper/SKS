@@ -67,14 +67,13 @@ function Clubs() {
                   >
                     Kulüp Detay
                   </button>
-
-                  {/* Modal */}
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+      {/* Modal */}
       <div
         className="modal fade "
         id="staticBackdrop"
@@ -90,6 +89,7 @@ function Clubs() {
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 {selectedClub !== null ? selectedClub.baslik : ""}
               </h1>
+
               <button
                 type="button"
                 className="btn-close"
@@ -100,6 +100,12 @@ function Clubs() {
             </div>
             <div className="modal-body">
               {selectedClub !== null ? selectedClub.icerik : ""}
+
+              <img
+                src={selectedClub !== null ? selectedClub.resim : ""}
+                alt=""
+                style={{ width: "300px", height: "300px" }}
+              />
             </div>
             <div className="modal-footer"></div>
           </div>
@@ -110,12 +116,3 @@ function Clubs() {
 }
 
 export default Clubs;
-{
-  /* <a
-                    href="#"
-                    className="btn"
-                    style={{ width: "100%", backgroundColor: "#C0E4D6" }}
-                  >
-                    Daha Fazla
-                  </a> */
-}
