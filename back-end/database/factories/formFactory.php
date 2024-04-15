@@ -16,8 +16,29 @@ class formFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            //
+        return $forms = [
+            [
+                'event_name' => 'Makale Oturumları 7',
+                'club_name' =>'',
+                'event_type',
+                'date_of_event',
+                'number_of_participants',
+                'form_id',
+                'adress',
+                'admin_id',
+                'url',
+                'image',
+                'event_subject',
+            ],
+
+            [
+
+            ],
+
+            [
+
+            ],
+
         ];
     }
 }
