@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Models\club;
 use App\Models\club_admin;
+use App\Models\sks_admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,11 @@ Route::get('club_admins', function(Request $request) {
     return $club_admin;
 
 });
+
+Route::get('sks_admin', function(Request $request) {
+    $sks_admin = sks_admin::first();
+    return $sks_admin;
+
+});
+
 

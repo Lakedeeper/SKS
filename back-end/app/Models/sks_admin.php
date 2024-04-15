@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class sks_admin extends Model
 {
@@ -15,7 +17,7 @@ class sks_admin extends Model
         'password',
         'user_id',
     ];
-    protected $hidden = [
+    protected $guarded = [
         'name',
         'surname',
         'password',

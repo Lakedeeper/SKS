@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             clubSeeder::class,
             club_adminSeeder::class,
+            sks_adminSeeder::class,
+            club_adminSeeder::class,
             
         ]);
     }

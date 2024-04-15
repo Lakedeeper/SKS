@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class club_admin extends Model
 {
     use HasFactory;
@@ -13,6 +14,7 @@ class club_admin extends Model
         'student_id',
         'name',
         'surname',
+        'password',
         'email',
         'club_name',
         'club_id',
