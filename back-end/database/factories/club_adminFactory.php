@@ -26,4 +26,12 @@ class club_adminFactory extends Factory
             'club_id' => '200',
         ];
     }
+
+    protected function data(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => json_decode($value, true),
+            set: fn ($value) => json_encode($value),
+        );
+    } 
 }

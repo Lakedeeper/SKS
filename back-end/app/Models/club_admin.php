@@ -20,11 +20,7 @@ class club_admin extends Model
     ];
 
     protected $hidden = [
-        'name',
-        'surname',
-        'password',
-        'email',
-        'club_name',
+        
 
     ];
 

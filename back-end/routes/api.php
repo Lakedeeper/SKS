@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\club;
+use App\Models\club_admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,12 @@ Route::get('users', function(Request $request) {
 Route::get('clubs', function(Request $request) {
     $club = club::all();
     return $club;
+
+});
+
+Route::get('club_admins', function(Request $request) {
+    $club_admin = club_admin::all();
+    return $club_admin;
 
 });
 
