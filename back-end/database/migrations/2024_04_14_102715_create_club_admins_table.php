@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('club_admins', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('student_id');
+            $table->integer('admin_id');
             $table->string('name');
             $table->string('surname');
             $table->string('password');

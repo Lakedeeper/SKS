@@ -15,7 +15,7 @@ class club_adminSeeder extends Seeder
     public function run(): void
     {
         club_admin::create([
-            'student_id' => '300',
+            'admin_id' => '300',
             'name' => 'Elif Yade',
             'surname' => 'Karakuş',
             'email' => 'Elif.yade@gmail.com',
@@ -26,7 +26,7 @@ class club_adminSeeder extends Seeder
         ]);
 
         club_admin::create([
-            'student_id' => '301',
+            'admin_id' => '301',
             'name' => 'Ece',
             'surname' => 'Bal',
             'email' => 'Ece.bal@gmail.com',
@@ -36,13 +36,43 @@ class club_adminSeeder extends Seeder
         ]);
 
         club_admin::create([
-            'student_id' => '302',
+            'admin_id' => '302',
             'name' => 'Ahmet',
             'surname' => 'Karakuş',
             'email' => 'Ahmet.karakuş@gmail.com',
             'password' => '8423LEKOVICCC',
             'club_name' => 'insani değerler ve etik',
             'club_id' => '202',
+        ]);
+
+        club_admin::create([
+            'admin_id' => '303',
+            'name' => 'Murat',
+            'surname' => 'Kurum',
+            'email' => 'Murat.kurum@gmail.com',
+            'password' => '8423LEKOVICCC',
+            'club_name' => 'insani değerler ve etik',
+            'club_id' => '203',
+        ]);
+
+        club_admin::create([
+            'admin_id' => '304',
+            'name' => 'Ekrem',
+            'surname' => 'İmamoğlu',
+            'email' => 'Ekrem.imamoğlu@gmail.com',
+            'password' => '8423LEKOVICCC',
+            'club_name' => 'insani değerler ve etik',
+            'club_id' => '204',
+        ]);
+
+        club_admin::create([
+            'admin_id' => '305',
+            'name' => 'Yaman',
+            'surname' => 'Koper',
+            'email' => 'Yaman.koper@gmail.com',
+            'password' => '8423LEKOVICCC',
+            'club_name' => 'insani değerler ve etik',
+            'club_id' => '205',
         ]);
     }
 }
