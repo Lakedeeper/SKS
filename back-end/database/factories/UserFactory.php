@@ -26,7 +26,8 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'password' => '1234567',
+            'password' => 'password',
+            'student_number' => $this->faker->randomDigit() *123456789,
         ];
     }
 

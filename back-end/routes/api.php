@@ -6,6 +6,9 @@ use App\Models\club_admin;
 use App\Models\sks_admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\club_adminController;
+use App\Http\Controllers\ClubController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,18 +27,22 @@ Route::get('users', function(Request $request) {
     return $user;
 
 });
+Route::get('/users/{id}', [UserController::class, 'index']);
 
 Route::get('clubs', function(Request $request) {
     $club = club::all();
     return $club;
 
 });
+Route::get('/clubs/{id}', [ClubController::class, 'index']);
 
 Route::get('club_admins', function(Request $request) {
     $club_admin = club_admin::all();
     return $club_admin;
 
 });
+
+Route::get('/club_admins/{id}', [club_adminController::class, 'index']);
 
 Route::get('sks_admin', function(Request $request) {
     $sks_admin = sks_admin::first();

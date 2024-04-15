@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class ClubController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $club = club::all();
+        $club = club::find($id);
+
+        if(!$club){
+            return response()->json(['error' => 'Club not found'], 404);
+        }
+
         return response()->json($club);
   
     }

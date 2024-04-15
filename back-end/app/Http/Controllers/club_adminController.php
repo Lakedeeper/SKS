@@ -7,10 +7,14 @@ use App\Models\club_admin;
 
 class club_adminController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $club = club::all();
-        return response()->json($club);
+        $clubadmin = club_admin::find($id);
+
+        if (!$clubadmin){
+            return response()->json(['error' => 'User not found'], 404);
+        }
+        return response()->json($clubadmin);
   
     }
 }

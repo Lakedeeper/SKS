@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('student_number')->random_int(9);
             $table->json('data')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

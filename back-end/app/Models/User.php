@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'api_token',
         'type',
+        'student_number',
     ];
 
     /**

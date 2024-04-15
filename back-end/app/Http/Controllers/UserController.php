@@ -8,12 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        $users = User::all();
-        return response()->json($users);
-  
+    public function index($id)
+{
+    $user = User::find($id);
+
+    if (!$user) {
+        return response()->json(['error' => 'User not found'], 404);
     }
+
+    return response()->json($user);
+}
 
     
 // dashboard

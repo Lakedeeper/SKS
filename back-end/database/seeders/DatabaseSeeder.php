@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'emir haktan',
             'email' => 'emir@gmail.com',
             'password' => 'emir123',
+            'student_number' => '210209035'
             
          ]);
 
