@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,6 +15,17 @@ class UserController extends Controller
   
     }
 
+    
+// dashboard
+    public function userprofile()
+    {
+        return view('userprofile');
+    }
+ 
+    public function about()
+    {
+        return view('about');
+    }
   
 
 }

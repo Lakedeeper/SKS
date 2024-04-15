@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('club_name');
+            $table->integer('club_id');
+            
         });
     }
 

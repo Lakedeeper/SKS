@@ -19,12 +19,14 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('api_token', 60)->uniqie()->nullable;
             $table->string('password');
+            $table->boolean('type')->default(false); 
             $table->rememberToken();
             $table->timestamps();
 
         });
     }
 
+    
     /**
      * Reverse the migrations.
      */

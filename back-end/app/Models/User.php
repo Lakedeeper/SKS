@@ -25,6 +25,7 @@ class User extends Authenticatable
         'email',
         'password',
         'api_token',
+        'type',
     ];
 
     /**
@@ -56,4 +57,12 @@ class User extends Authenticatable
             set: fn ($value) => json_encode($value),
         );
     } 
+
+    protected function type(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) =>  ["user", "admin"][$value],
+        );
+    }
+
 }

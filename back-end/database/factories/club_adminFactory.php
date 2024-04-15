@@ -16,13 +16,14 @@ class club_adminFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => fake()->name(),      
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
-            'club_name' => fake()->category()
+        return   [
+            'student_id' => '300',
+            'name' => 'arif',
+            'surname' => 'arslan',
+            'email' => 'arif@gmail.com',
+            'password' => '8423LEKOVICCC',
+            'club_name' => 'biontek',
+            'club_id' => '200',
         ];
     }
 }
