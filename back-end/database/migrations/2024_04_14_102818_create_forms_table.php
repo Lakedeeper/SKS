@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('date_of_event');
             $table->integer('number_of_participants');
             $table->string('adress');
-            $table->string('club_admin');
+            $table->integer('admin_id');
             $table->string('form_url');
             $table->string('image');
             $table->string('subject');

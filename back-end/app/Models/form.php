@@ -16,7 +16,7 @@ class form extends Model
         'number_of_participants',
         'form_id',
         'adress',
-        'club_admin',
+        'admin_id',
         'url',
         'image',
         'event_subject',
