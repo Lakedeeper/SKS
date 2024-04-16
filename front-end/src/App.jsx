@@ -11,6 +11,7 @@ import FormAdmin from "./Pages/FormAdmin";
 import LoginStaff from "./Pages/LoginStaff";
 import { StudentUserProvider } from "./StudentUserContext";
 import Footer from "./Component/Footer";
+import AdminLogin from "./Pages/AdminLogin";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/FormAdmin" element={<FormAdmin />} />
           <Route path="/LoginStaff" element={<LoginStaff />} />
+          <Route path="/AdminLogin" element={<AdminLogin />} />
         </Routes>
         <Footer />
       </StudentUserProvider>

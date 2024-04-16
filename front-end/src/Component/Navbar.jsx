@@ -19,10 +19,13 @@ function Navbar() {
   useEffect(() => {
     const storedStudentUser = localStorage.getItem("studentUser");
     const storedClubUser = localStorage.getItem("clubUser");
+    const storedAdminUser = localStorage.getItem("adminEmail");
     if (storedStudentUser) {
       setStudentUser(JSON.parse(storedStudentUser));
     } else if (storedClubUser) {
       setClubUser(JSON.parse(storedClubUser));
+    } else if (storedAdminUser) {
+      setAdminUser(JSON.parse(storedClubUser));
     }
   }, [setStudentUser]);
 

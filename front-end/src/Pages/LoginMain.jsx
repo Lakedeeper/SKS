@@ -7,7 +7,7 @@ function LoginMain() {
   return (
     <div className="containerMain">
       <div className="LoginTypes">
-        <button className="button1" onClick={() => navigate("/LoginStaff")}>
+        <button className="button1" onClick={() => navigate("/AdminLogin")}>
           SKS ADMIN
         </button>
         <button className="button1" onClick={() => navigate("/LoginStaff")}>

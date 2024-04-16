@@ -1,24 +1,26 @@
 import React, { useState } from "react";
-import "./LoginStaff.css";
+import "./AdminLogin";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function LoginStaff() {
-  const [clubEmail, setClubEmail] = useState("");
+function AdminLogin() {
+  const [adminEmail, setAdminEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  console.log(adminEmail);
+  console.log(password);
 
   const handleStudent = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/club_admins");
+      const response = await axios.get("http://127.0.0.1:8000/api/sks_admin");
 
       const matchedUser = await response.data.find(
-        (user) => user.email === clubEmail && user.password === password
+        (user) => user.email === adminEmail && user.password === password
       );
       if (matchedUser) {
         alert("Başarılı giriş!");
 
-        localStorage.setItem("clubUser", JSON.stringify(matchedUser));
+        localStorage.setItem("adminEmail", JSON.stringify(matchedUser));
 
         navigate("/Clubs");
         window.location.reload();
@@ -37,8 +39,8 @@ function LoginStaff() {
         <input
           type="text"
           placeholder="E-mail"
-          value={clubEmail}
-          onChange={(e) => setClubEmail(e.target.value)}
+          value={adminEmail}
+          onChange={(e) => setAdminEmail(e.target.value)}
         />
         <input
           type="text"
@@ -52,4 +54,4 @@ function LoginStaff() {
   );
 }
 
-export default LoginStaff;
+export default AdminLogin;
