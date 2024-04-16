@@ -8,3 +8,18 @@
   display: flex;
   justify-content: center;
 }
+.searchBarEvents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.searchBarEvents input{
+  width: 75%;
+  margin-right: 30px;
+}
+.searchBarEvents button{
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./Events.css";
 import axios from "axios";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 function Events() {
   const [events, setEvents] = useState([]);
@@ -33,6 +34,11 @@ function Events() {
         <h1 className="EventsHeader" style={{ marginTop: "75px" }}>
           EVENTS
         </h1>
+        <hr/>
+        <div className="searchBarEvents">
+         <CalendarMonthIcon/><input type="date"/>
+          <button>Search</button>
+        </div>
         {events.map((event) => (
           <div className="col-md-3" key={event.id}>
             <a

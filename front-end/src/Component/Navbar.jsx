@@ -12,6 +12,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("studentUser");
     localStorage.removeItem("clubUser");
+    localStorage.removeItem("adminEmail");
     navigate("/");
     window.location.reload();
   };
