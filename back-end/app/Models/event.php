@@ -19,7 +19,8 @@ class event extends Model
         'subject',
         'exp',
         'image',
-        'club_id'
+        'club_id',
+        'form_id',
     ];
 
     protected function data(): Attribute

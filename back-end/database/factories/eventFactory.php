@@ -26,6 +26,7 @@ class eventFactory extends Factory
                 'exp' => 'yy',
                 'image' => '',
                 'club_id' => '',
+                'form_id' => '',
             ],
             [
                 'event_id' => '901',
@@ -36,6 +37,7 @@ class eventFactory extends Factory
                 'exp' => 'yy',
                 'image' => '',
                 'club_id' => '',
+                'form_id' => '',
             ],
             [
                 'event_id' => '900',
@@ -46,6 +48,7 @@ class eventFactory extends Factory
                 'exp' => 'yy',
                 'image' => '',
                 'club_id' => '',
+                'form_id' => '',
             ],
         ];
     }

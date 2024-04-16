@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('event_id');
             $table->integer('club_id');
+            $table->integer('form_id');
             $table->string('event_name');
             $table->date('start_of_event');
             $table->date('end_of_event');

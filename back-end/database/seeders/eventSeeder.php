@@ -22,6 +22,7 @@ class eventSeeder extends Seeder
                 'exp' => 'yy',
                 'image' => '',
                 'club_id' => '',
+                'form_id' => '',
         ]);
 
         event::create([
@@ -33,6 +34,7 @@ class eventSeeder extends Seeder
                 'exp' => 'yy',
                 'image' => '',
                 'club_id' => '',
+                'form_id' => '',
         ]);
 
         event::create([
@@ -44,6 +46,7 @@ class eventSeeder extends Seeder
                 'exp' => 'yy',
                 'image' => '',
                 'club_id' => '',
+                'form_id' => '',
         ]);
     }
 }
