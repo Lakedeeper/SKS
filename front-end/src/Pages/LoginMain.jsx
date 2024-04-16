@@ -7,10 +7,10 @@ function LoginMain() {
   return (
     <div className="containerMain">
       <div className="LoginTypes">
-        <button className="button1" onClick={() => navigate("/LoginStudents")}>
+        <button className="button1" onClick={() => navigate("/LoginStaff")}>
           SKS ADMIN
         </button>
-        <button className="button1" onClick={() => navigate("/LoginStudents")}>
+        <button className="button1" onClick={() => navigate("/LoginStaff")}>
           CLUB MANAGER
         </button>
         <button className="button1" onClick={() => navigate("/LoginStudents")}>

@@ -1,40 +1,28 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import "./Clubs.css";
+import axios from "axios";
 
 function Clubs() {
-  const [clubs, setClub] = useState([
-    {
-      id: "1",
-      baslik: "Kart Başlık 1",
-      icerik: "Kart içeriği buraya gelebilir.",
-      resim:
-        "https://uskudar.edu.tr/assets/uploads/ogrencikulup/222/uskubat-kulubu.png",
-    },
-    {
-      id: "2",
-      baslik: "Kart Başlık 2",
-      icerik: "Kart içeriği buraya gelebilir2.",
-      resim:
-        "https://uskudar.edu.tr/assets/uploads/ogrencikulup/195/insani-degerler-ve-etik-kulubu.jpg",
-    },
-    {
-      id: "3",
-      baslik: "Kart Başlık 3",
-      icerik: "Kart içeriği buraya gelebilir3.",
-      resim:
-        "https://uskudar.edu.tr/assets/uploads/ogrencikulup/214/fablab-girisimcilik-kulubu.PNG",
-    },
-  ]);
+  const [clubs, setClub] = useState([]);
 
   const [selectedClub, setSelectedClub] = useState(null); //arif burada klüp bilgilerini tutuyoruz modalda kullanıcaz :)
 
   console.log(selectedClub);
 
   useEffect(() => {
-    // axios
-    //   .get("https://api.example.com/kartlar")
-    //   .then((response) => setClub(response.data));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/clubs");
+        console.log(response.data);
+        setClub(response.data);
+        console.log(clubs);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -45,13 +33,13 @@ function Clubs() {
           <div className="col-md-3" key={clubs.id}>
             <div className="card">
               <img
-                src={clubs.resim}
+                src={clubs.club_logo}
                 alt="Resim"
                 style={{ height: "300px", objectFit: "cover" }} //resimin boyutunu container a  göre ayarlamak için objectFit = cover ekledim.
               />
               <div className="card-body">
-                <h5 className="card-title">{clubs.baslik}</h5>
-                <p className="card-text">{clubs.icerik}</p>
+                <h5 className="card-title">{clubs.club_name}</h5>
+                <p className="card-text">{clubs.club_exp}</p>
                 <div>
                   <button
                     type="button"
@@ -83,36 +71,44 @@ function Clubs() {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-          <div className="modal-header">
-    <img
-        src={selectedClub !== null ? selectedClub.resim : ""}
-        alt=""
-        style={{ width: "200px", height: "180px", marginRight: "10px" }}
-    />
-    <div className="clubs_Header">
-        <h1 className="modal-title fs-5" id="staticBackdropLabel">
-            {selectedClub !== null ? selectedClub.baslik : ""}
-        </h1>
-        <p>Club Manager: /club manager/</p>
-    </div>
+            <div className="modal-header">
+              <img
+                src={selectedClub !== null ? selectedClub.club_logo : ""}
+                alt=""
+                style={{ width: "200px", height: "180px", marginRight: "10px" }}
+              />
+              <div className="clubs_Header">
+                <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                  {selectedClub !== null ? selectedClub.club_name : ""}
+                </h1>
+                <p>Club Manager: /club manager/</p>
+              </div>
 
-    <button
-        type="button"
-        className="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-        onClick={() => setSelectedClub(null)}
-    />
-</div>
-            <div className="modal-body">
-             <p style={{margin: "10px 10px",backgroundColor:"antiquewhite",borderRadius:"10px",padding:"8px"}}>uu.sks@gmail.com</p>
-              <p style={{margin: "10px 10px"}}>Kulüp açıklaması: Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vel officiis ullam vitae inventore, culpa earum animi non nam tempore.</p>
-        
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                onClick={() => setSelectedClub(null)}
+              />
             </div>
-            
+            <div className="modal-body">
+              <p
+                style={{
+                  margin: "10px 10px",
+                  backgroundColor: "antiquewhite",
+                  borderRadius: "10px",
+                  padding: "8px",
+                }}
+              >
+                uu.sks@gmail.com
+              </p>
+              <p style={{ margin: "10px 10px" }}>
+                {selectedClub !== null ? selectedClub.club_exp : ""}
+              </p>
+            </div>
           </div>
         </div>
       </div>

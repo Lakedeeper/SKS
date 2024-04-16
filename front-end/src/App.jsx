@@ -9,22 +9,23 @@ import Form from "./Pages/Form";
 import ContactUs from "./Pages/ContactUs";
 import FormAdmin from "./Pages/FormAdmin";
 import LoginStaff from "./Pages/LoginStaff";
-
+import { StudentUserProvider } from "./StudentUserContext";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<LoginMain />} />
-        <Route path="/Clubs" element={<Clubs />} />
-        <Route path="/LoginStudents" element={<LoginStudents />} />
-        <Route path="/Events" element={<Events />} />
-        <Route path="/Form" element={<Form/>} />
-        <Route path="/ContactUs" element={<ContactUs/>} />
-        <Route path="/FormAdmin" element={<FormAdmin/>} />
-        <Route path="/LoginStudents" element={<LoginStudents/>} />
-        <Route path="/LoginStaff" element={<LoginStaff/>} />
-      </Routes>
+      <StudentUserProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LoginMain />} />
+          <Route path="/Clubs" element={<Clubs />} />
+          <Route path="/LoginStudents" element={<LoginStudents />} />
+          <Route path="/Events" element={<Events />} />
+          <Route path="/Form" element={<Form />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/FormAdmin" element={<FormAdmin />} />
+          <Route path="/LoginStaff" element={<LoginStaff />} />
+        </Routes>
+      </StudentUserProvider>
     </BrowserRouter>
   );
 }
