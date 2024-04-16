@@ -14,9 +14,12 @@ class event extends Model
     protected $fillable = [
         'event_id',
         'event_name',
-        'date_of_event',
+        'start_of_event',
+        'end_of_event',
         'subject',
         'exp',
+        'image',
+        'club_id'
     ];
 
     protected function data(): Attribute

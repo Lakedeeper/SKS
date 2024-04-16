@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('event_id');
+            $table->integer('club_id');
             $table->string('event_name');
-            $table->date('date_of_event');
+            $table->date('start_of_event');
+            $table->date('end_of_event');
             $table->string('subject');
+            $table->string('image');
             $table->string('exp');
             
         });
