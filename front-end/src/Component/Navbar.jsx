@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../assets/sksLogo.jpeg";
+import { useStudentUser } from "../StudentUserContext";
 function Navbar() {
+  const { studentUser, setStudentUser } = useStudentUser();
+  const { clubUser, setClubUser } = useStudentUser();
+  const { adminUser, setAdminUser } = useStudentUser();
   const [User, setUser] = useState({
     id: "1",
     UserName: "Student",
@@ -28,10 +32,15 @@ function Navbar() {
           <NavLink to="/Events" className="nav-link">
             Events
           </NavLink>
+          {studentUser == null && clubUser == null && adminUser == null ? (
+            <NavLink to="/" className="nav-link">
+              Log in
+            </NavLink>
+          ) : (
+            ""
+          )}
           <NavLink className="nav-link">
-            {User != null && User.UserName == "Student"
-              ? "Welcome" + " " + User.UserName
-              : "Log in"}
+            {studentUser != null ? studentUser.name : ""}
           </NavLink>
           {User !== null && User.UserName == "Club Manager" ? (
             <NavLink to="/Form" className="nav-link">
@@ -48,7 +57,7 @@ function Navbar() {
           ) : (
             ""
           )}
-          {User != null ? (
+          {studentUser != null ? (
             <NavLink to="/" className="nav-link" onClick={() => setUser(null)}>
               Log Out
             </NavLink>
