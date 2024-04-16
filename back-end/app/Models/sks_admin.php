@@ -29,5 +29,13 @@ class sks_admin extends Model
         'email_verified_at' => 'datetime',
         
     ];
+
+    protected function data(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => json_decode($value, true),
+            set: fn ($value) => json_encode($value),
+        );
+    } 
 }
 

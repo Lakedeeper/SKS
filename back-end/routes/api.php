@@ -13,6 +13,7 @@ use App\Http\Controllers\club_adminController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\eventController;
+use App\Http\Controllers\sks_adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,10 +59,12 @@ Route::get('/club_admins/{id}', [club_adminController::class, 'index']);
 
 //sks_admin
 Route::get('sks_admin', function(Request $request) {
-    $sks_admin = sks_admin::first();
-    return $sks_admin;
+    $sksadmin = sks_admin::first();
+    return $sksadmin;
 
 });
+Route::get('/sks_admin/{id}', [sks_adminController::class, 'index']);
+
 
 
 //forms

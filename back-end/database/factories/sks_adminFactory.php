@@ -16,11 +16,13 @@ class sks_adminFactory extends Factory
      */
     public function definition(): array
     {
-        return [
+        return $sksadmin = [
+            [
             'name' => 'Ahmet Doğukan',
             'surname' => 'Solak',
             'email' => 'Ahmet.doğukan.solak@gmail.com',
             'user_id' => '1001',
+            ],
         ];
     }
 }
