@@ -21,6 +21,11 @@ use App\Http\Controllers\ClubController;
 |
 */
 
+Route::group(['middleware' => 'cors'], function () {
+    Route::get('public-post-list', [PostController::class, 'postList']);
+});
+
+
 
 Route::get('users', function(Request $request) {
     $user = User::all();
