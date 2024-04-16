@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\club;
 
+use App\Models\club;
 use Illuminate\Http\Request;
 
 class ClubController extends Controller

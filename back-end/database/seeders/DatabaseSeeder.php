@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             club_adminSeeder::class,
             sks_adminSeeder::class,
             club_adminSeeder::class,
+            formSeeder::class,
+            eventSeeder::class,
             
         ]);
     }
