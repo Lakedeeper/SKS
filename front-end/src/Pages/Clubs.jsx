@@ -23,7 +23,7 @@ function Clubs() {
     };
 
     fetchData();
-  }, []);
+  }, [clubs]);
 
   return (
     <div className="container">
@@ -39,7 +39,7 @@ function Clubs() {
               />
               <div className="card-body">
                 <h5 className="card-title">{clubs.club_name}</h5>
-                <p className="card-text">{clubs.club_exp}</p>
+                {/* <p className="card-text">{clubs.club_exp}</p> */}
                 <div>
                   <button
                     type="button"

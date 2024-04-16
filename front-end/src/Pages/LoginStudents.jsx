@@ -19,11 +19,13 @@ function LoginStudents() {
       );
       if (matchedUser) {
         alert("Başarılı giriş!");
-        setStudentUser(matchedUser);
+
+        localStorage.setItem("studentUser", JSON.stringify(matchedUser));
 
         navigate("/Clubs");
+        window.location.reload();
       } else {
-        alert("Hatalı giriş bilgileri!");
+        alert("Hatalı giriş ");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
