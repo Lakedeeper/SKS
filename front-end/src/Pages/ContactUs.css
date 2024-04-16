@@ -1,7 +1,8 @@
-.headerContactUs{
-  font-size: xx-large;
-    margin: 25px 40px;
-    font-family: "Times New Roman", Times, serif;
+
+.allPageElf{
+  background-color: #F5F5F7;
+  height: 100vh;
+  
 }
 
 .allPage{
@@ -9,14 +10,22 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  margin-bottom: 50px;
 
 }
 
+.headerContactUs{
+   font-size: xxx-large;
+   font-family: "Times New Roman", Times, serif;
+   padding: 30px 50px;
+
+}
+
+
+
 .InformationBox{
     background-color: #BAD7D0;
-    width: 40%;
-    height: 200px;
+    width: 90%;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,3 +34,14 @@
     margin: 50px 0;
    
 }
+.Information{
+  font-family: newsreader;
+  font-size: 22px;
+  padding-right: 40px;
+}
+
+.haritaImageContactUs img{
+  width: 100%;
+}
+
+

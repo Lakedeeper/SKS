@@ -7,6 +7,7 @@ import DoDisturbIcon from '@mui/icons-material/DoDisturb';
 function Form() {
   return (
 <>
+<div className='allPageForm'>
   <div className='containerForm'>
         <div className='headerForm'>
             <div className='LogoForm'>
@@ -51,7 +52,9 @@ function Form() {
             </div>
         </div>
 
+        </div>
         </>
+
   )
 }
 
