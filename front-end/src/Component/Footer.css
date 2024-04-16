@@ -1,0 +1,42 @@
+.FooterContainer{
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.firstColumnFooter{
+    width: 20%;
+    font-family: newsreader;
+    padding-left: 30px;
+}
+.firstRowImage{
+    text-align: center;
+}
+.secondRowText{
+    padding-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.secondColumnFooter{
+align-items: center;
+justify-content: center;
+width: 25%;
+font-family: newsreader;
+}
+
+.thirdColumnFooter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 60px;
+}
+.socialAccountsFooter{
+width: 35px;
+height: 25px;
+}
+.socialAccountsFooter a img{
+width: 25px;
+height: 25px;
+}

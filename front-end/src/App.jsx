@@ -10,6 +10,7 @@ import ContactUs from "./Pages/ContactUs";
 import FormAdmin from "./Pages/FormAdmin";
 import LoginStaff from "./Pages/LoginStaff";
 import { StudentUserProvider } from "./StudentUserContext";
+import Footer from "./Component/Footer";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/FormAdmin" element={<FormAdmin />} />
           <Route path="/LoginStaff" element={<LoginStaff />} />
         </Routes>
+        <Footer />
       </StudentUserProvider>
     </BrowserRouter>
   );
