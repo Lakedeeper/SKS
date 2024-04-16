@@ -1,40 +1,30 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./Events.css";
+import axios from "axios";
 
 function Events() {
-  const [events, setEvents] = useState([
-    {
-      id: "1",
-      baslik: "Kart Başlık 1",
-      icerik: "Kart içeriği 1",
-      resim:
-        "https://uskudar.edu.tr/assets/uploads/ogrencikulup/222/uskubat-kulubu.png",
-    },
-    {
-      id: "2",
-      baslik: "Kart Başlık 2",
-      icerik: "Kart içeriği 2",
-      resim:
-        "https://uskudar.edu.tr/assets/uploads/ogrencikulup/195/insani-degerler-ve-etik-kulubu.jpg",
-    },
-    {
-      id: "3",
-      baslik: "Kart Başlık 3",
-      icerik: "Kart içeriği 3",
-      resim:
-        "https://uskudar.edu.tr/assets/uploads/ogrencikulup/214/fablab-girisimcilik-kulubu.PNG",
-    },
-  ]);
+  const [events, setEvents] = useState([]);
+
+  const [selectedClub, setSelectedClub] = useState(null);
 
   const [selectedEvent, setSelectedEvent] = useState(null); //arif burada  da event bilgilerini tutuyoruz modalda kullanıcaz :)
 
   console.log(selectedEvent);
 
   useEffect(() => {
-    // axios
-    //   .get("https://api.example.com/kartlar")
-    //   .then((response) => setEvents(response.data));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/events");
+        console.log(response.data);
+        setEvents(response.data);
+        console.log(events);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -54,13 +44,14 @@ function Events() {
             >
               <div className="card cardEvent">
                 <img
-                  src={event.resim}
+                  src={event.image}
                   alt="Resim"
                   style={{ height: "300px", objectFit: "cover" }} //resimin boyutunu container a  göre ayarlamak için objectFit = cover ekledim.
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{event.baslik}</h5>
-                  <p className="card-text">{event.icerik}</p>
+                  <h5 className="card-title">{event.event_name}</h5>
+                  <p className="card-text">{event.start_of_event}</p>
+                  <p className="card-text">{event.end_of_event}</p>
                 </div>
               </div>
             </a>
@@ -80,16 +71,16 @@ function Events() {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-            <img
-        src={selectedEvent !== null ? selectedEvent.resim : ""}
-        alt=""
-        style={{ width: "200px", height: "180px", marginRight: "10px" }}
-            />
-            <div className="headerEventsModal">
-              <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                {selectedEvent !== null ? selectedEvent.baslik : ""}
-              </h1>
-              <p>Öğretim üyesi : /isim soyisim/</p>
+              <img
+                src={selectedEvent !== null ? selectedEvent.image : ""}
+                alt=""
+                style={{ width: "200px", height: "180px", marginRight: "10px" }}
+              />
+              <div className="headerEventsModal">
+                <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                  {selectedEvent !== null ? selectedEvent.event_name : ""}
+                </h1>
+                <p>Öğretim üyesi : /isim soyisim/</p>
               </div>
               <button
                 type="button"
@@ -99,14 +90,17 @@ function Events() {
               />
             </div>
             <div className="modal-body">
-              {selectedEvent !== null ? selectedEvent.icerik : ""}
-             
+              {selectedEvent !== null ? selectedEvent.subject : ""}
             </div>
-            <p style={{marginLeft:"15px"}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam iste dignissimos minus et omnis possimus tenetur quod, magni repudiandae aliquid, autem reprehenderit optio fuga voluptatibus dolor consectetur modi, incidunt odio.</p>
+            <p style={{ marginLeft: "15px" }}>
+              {selectedEvent !== null ? selectedEvent.exp : ""}
+            </p>
             <div className="modal-footer">
-             <h6>Event Informations:</h6> 
+              <h6>Event Informations:</h6>
             </div>
-            <p style={{marginLeft:"15px"}}>Event date and time: Tarih - Saat</p>
+            <p style={{ marginLeft: "15px" }}>
+              Event date and time: Tarih - Saat
+            </p>
           </div>
         </div>
       </div>
