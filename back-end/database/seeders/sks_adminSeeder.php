@@ -20,5 +20,12 @@ class sks_adminSeeder extends Seeder
             'email' => 'Ahmet.doğukan.solak@gmail.com',
             'user_id' => '1001',
         ]);
+
+        sks_admin::create([
+            'name' => 'null',
+            'surname' => 'null',
+            'email' => 'null@gmail.com',
+            'user_id' => '0',
+            ]);
     }
 }

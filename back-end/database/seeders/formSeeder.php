@@ -13,7 +13,7 @@ class formSeeder extends Seeder
      */
     public function run(): void
     {
-        event::create(
+        form::create(
              [
                  'event_id'=> '1000',
                  'event_name'=> 'Nasıl Tübitak 2209 Projesi Hazırlarız?',
@@ -25,7 +25,7 @@ class formSeeder extends Seeder
              ]);
  
  
-             event::create(
+             form::create(
                [
                  'event_id'=> '1001',
                  'event_name'=> 'Makale Okuma Etkinliği-3',
@@ -36,7 +36,7 @@ class formSeeder extends Seeder
                  'club_id'=> '205'
              ]);
  
-            event::create(
+            form::create(
                 [ 
                  'event_id'=> '1002',
                  'event_name'=> 'Makale Oturumları - 7',
@@ -47,7 +47,7 @@ class formSeeder extends Seeder
                  'club_id'=> '201'
  
              ]);
-             event::create(
+             form::create(
              
                [
                  'event_id'=> '1003',
@@ -58,7 +58,7 @@ class formSeeder extends Seeder
                  'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fmessage-deneyi-onemi-ve-kapsami-44642.jpg%3Ft%3D1710717964&w=828&q=75',
                  'club_id'=> '200'
              ]);
-             event::create(
+             form::create(
              [
                  'event_id'=> '1004',
                  'event_name'=> 'Makale Oturumları - 8',
@@ -68,7 +68,7 @@ class formSeeder extends Seeder
                  'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fmakale-oturumlari-8-44643.jpg%3Ft%3D1710718232&w=828&q=75',
                  'club_id'=> '201'
              ]);
-             event::create(
+             form::create(
              [
                  'event_id'=> '1005',
                  'event_name'=> 'İyilik İftarı',
@@ -78,7 +78,7 @@ class formSeeder extends Seeder
                  'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fiyilik-iftari-44646.jpg%3Ft%3D1710719029&w=828&q=75',
                  'club_id'=> '202'
              ]);
-              event::create(
+              form::create(
              [
                  'event_id'=> '1006',
                  'event_name'=> 'Makale Oturumları - 9',
@@ -88,7 +88,7 @@ class formSeeder extends Seeder
                  'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fmakale-oturumlari-9-44717.jpg%3Ft%3D1711319669&w=828&q=75',
                  'club_id'=> '201'
              ]);
-               event::create(
+               form::create(
              [
                  'event_id'=> ' 1007',
                  'event_name'=> 'Kitap Okuma Stratejileri',
@@ -98,7 +98,7 @@ class formSeeder extends Seeder
                  'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fkitap-okuma-stratejileri-44921.jpg%3Ft%3D1713154730&w=828&q=75',
                  'club_id'=> '204'
              ]);
-               event::create(
+               form::create(
              [
                  'event_id'=> '1008',
                  'event_name'=> 'Biyogirişimcilik 101',
@@ -108,7 +108,7 @@ class formSeeder extends Seeder
                  'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fbiyogirisimcilik-101-44920.jpg%3Ft%3D1713154485&w=828&q=75',
                  'club_id'=> '203'
              ]);
-               event::create(
+               form::create(
              [
                 
                  'event_id'=> '1009',

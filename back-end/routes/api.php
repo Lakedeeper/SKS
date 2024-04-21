@@ -59,7 +59,7 @@ Route::get('/club_admins/{id}', [club_adminController::class, 'index']);
 
 //sks_admin
 Route::get('sks_admin', function(Request $request) {
-    $sksadmin = sks_admin::first();
+    $sksadmin = sks_admin::all();
     return $sksadmin;
 
 });
