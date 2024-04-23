@@ -1,25 +1,26 @@
-.EventsHeader {
-  margin-bottom: 60px;
-}
-.cardEvent {
-  cursor: pointer;
-}
-.modal-footer{
-  display: flex;
-  justify-content: center;
-}
-.searchBarEvents{
+.searchBarEvents {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px; 
 }
-.searchBarEvents input{
-  width: 75%;
-  margin-right: 30px;
+
+.searchBarEvents .Input1Events {
+  width: 10%;
+  padding-right: 10px; 
+  margin-right: 10px; 
+  border-radius: 20px;
 }
-.searchBarEvents button{
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: #D9D9D9;
+
+.searchBarEvents .Input2Events {
+  width: 600px;
+  margin-left: 20px; 
+  border-radius: 20px;
+}
+
+.searchBarEvents button {
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #BAD7D0;
+  margin-left: 15px;
 }
