@@ -23,7 +23,7 @@ function Clubs() {
     };
 
     fetchData();
-  }, [clubs]);
+  }, []);
 
   return (
     <div className="container">

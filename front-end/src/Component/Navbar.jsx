@@ -26,7 +26,7 @@ function Navbar() {
     } else if (storedClubUser) {
       setClubUser(JSON.parse(storedClubUser));
     } else if (storedAdminUser) {
-      setAdminUser(JSON.parse(storedClubUser));
+      setAdminUser(JSON.parse(storedAdminUser));
     }
   }, [setStudentUser]);
 

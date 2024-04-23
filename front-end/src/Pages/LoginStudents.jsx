@@ -13,9 +13,13 @@ function LoginStudents() {
   const handleStudent = async () => {
     try {
       const response = await axios.get("http://127.0.0.1:8000/api/users");
+      const users = response.data;
 
-      const matchedUser = await response.data.find(
-        (user) => user.email === studentID && user.password === password
+      const matchedUser = users.find(
+        (user) =>
+          user.student_number &&
+          user.student_number.toString().trim() === studentID.trim() &&
+          user.password === password.trim()
       );
       if (matchedUser) {
         alert("Başarılı giriş!");
@@ -43,7 +47,7 @@ function LoginStudents() {
           onChange={(e) => setStudentID(e.target.value)}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

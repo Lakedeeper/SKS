@@ -17,6 +17,8 @@ function AdminLogin() {
       const matchedUser = await response.data.find(
         (user) => user.email === adminEmail && user.password === password
       );
+
+      console.log(matchedUser);
       if (matchedUser) {
         alert("Başarılı giriş!");
 
@@ -43,7 +45,7 @@ function AdminLogin() {
           onChange={(e) => setAdminEmail(e.target.value)}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
