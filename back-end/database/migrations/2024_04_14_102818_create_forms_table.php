@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('admin_id');
             $table->string('form_url');
             $table->string('image');
-            $table->string('subject');
+            $table->string('event_subject');
             
 
 
