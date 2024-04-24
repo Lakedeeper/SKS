@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import LoginMain from "./Pages/LoginMain";
 import Navbar from "./Component/Navbar";
 import LoginStudents from "./Pages/LoginStudents";
@@ -16,19 +17,28 @@ function App() {
   return (
     <BrowserRouter>
       <StudentUserProvider>
-        <Navbar />
         <Routes>
           <Route path="/" element={<LoginMain />} />
-          <Route path="/Clubs" element={<Clubs />} />
           <Route path="/LoginStudents" element={<LoginStudents />} />
-          <Route path="/Events" element={<Events />} />
-          <Route path="/Form" element={<Form />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/FormAdmin" element={<FormAdmin />} />
           <Route path="/LoginStaff" element={<LoginStaff />} />
           <Route path="/AdminLogin" element={<AdminLogin />} />
+          <Route
+            path="*"
+            element={
+              <>
+                <Navbar />
+                <Outlet />
+                <Footer />
+              </>
+            }
+          >
+            <Route path="Clubs" element={<Clubs />} />
+            <Route path="Events" element={<Events />} />
+            <Route path="Form" element={<Form />} />
+            <Route path="ContactUs" element={<ContactUs />} />
+            <Route path="FormAdmin" element={<FormAdmin />} />
+          </Route>
         </Routes>
-        <Footer />
       </StudentUserProvider>
     </BrowserRouter>
   );

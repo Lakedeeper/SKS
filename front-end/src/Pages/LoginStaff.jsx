@@ -20,7 +20,7 @@ function LoginStaff() {
 
         localStorage.setItem("clubUser", JSON.stringify(matchedUser));
 
-        navigate("/Clubs");
+        navigate("/Events");
         window.location.reload();
       } else {
         alert("Hatalı giriş ");

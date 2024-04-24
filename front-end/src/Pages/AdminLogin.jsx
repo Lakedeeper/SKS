@@ -24,7 +24,7 @@ function AdminLogin() {
 
         localStorage.setItem("adminEmail", JSON.stringify(matchedUser));
 
-        navigate("/Clubs");
+        navigate("/Events");
         window.location.reload();
       } else {
         alert("Hatalı giriş ");
