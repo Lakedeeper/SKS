@@ -36,7 +36,8 @@ function Events() {
         </h1>
         <hr/>
         <div className="searchBarEvents">
-         <CalendarMonthIcon/><input type="date"/>
+         <CalendarMonthIcon/><input className="Input1Events" type="date"/>
+         <input className="Input2Events" type="text" />
           <button>Search</button>
         </div>
         {events.map((event) => (
