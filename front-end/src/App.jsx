@@ -13,6 +13,7 @@ import LoginStaff from "./Pages/LoginStaff";
 import { StudentUserProvider } from "./StudentUserContext";
 import Footer from "./Component/Footer";
 import AdminLogin from "./Pages/AdminLogin";
+import Admin from "./AdminPages/Admin";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,8 @@ function App() {
           <Route path="/LoginStudents" element={<LoginStudents />} />
           <Route path="/LoginStaff" element={<LoginStaff />} />
           <Route path="/AdminLogin" element={<AdminLogin />} />
+          <Route path="/Admin" element={<Admin />} />
+
           <Route
             path="*"
             element={
