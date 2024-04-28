@@ -1,13 +1,14 @@
-import React from "react";
 import AdminNavbar from "./AdminNavbar";
-import AdminMain from "./AdminMain";
+// import AdminMain from "./AdminMain";
+import Forms from "./Forms";
 
 function Admin() {
   return (
-    <div>
+    <>
       <AdminNavbar />
-      <AdminMain />
-    </div>
+      {/* <AdminMain /> */}
+      <Forms />
+    </>
   );
 }
 

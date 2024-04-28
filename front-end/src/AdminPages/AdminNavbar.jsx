@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./AdminNavbar.css";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
 
-function AdminNavbar(props) {
+import { useEffect } from "react";
+
+function AdminNavbar() {
   useEffect(() => {}, []);
 
   return (
@@ -37,7 +37,7 @@ function AdminNavbar(props) {
                 <li>
                   <Link>
                     <span className="las la-swimmer active" />
-                    <small>Müşteriler</small>
+                    <small>Formlar</small>
                   </Link>
                 </li>
                 <li>
