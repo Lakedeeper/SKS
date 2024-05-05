@@ -1,13 +1,11 @@
-function Forms() {
+import React from 'react'
+import '../AdminPages/AdminClubs.css'
+
+function AdminClubs() {
   return (
-    <div
-      style={{
-        border: "1px solid red",
-        marginRight: "10px",
-        marginLeft: "170px",
-      }}
-    >
-      <table
+    <div>
+
+<table
         className="table table-success table-striped"
         style={{ width: "100%" }}
       >
@@ -15,8 +13,8 @@ function Forms() {
           <tr className="table-dark">
             <th scope="col">#</th>
             <th scope="col">Club Name</th>
-            <th scope="col">Event Name</th>
             <th scope="col">Club Manager</th>
+            <th scope="col">Mail Adress</th>
             <th scope="col">Date</th>     
             <th style={{color:'black'}}>.</th>
           </tr>
@@ -63,8 +61,9 @@ function Forms() {
           </tr>
         </tbody>
       </table>
+
     </div>
-  );
+  )
 }
 
-export default Forms;
+export default AdminClubs

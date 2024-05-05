@@ -1,12 +1,9 @@
-function Forms() {
+import React from 'react'
+import '../AdminPages/AdminEvents.css'
+
+function AdminEvents() {
   return (
-    <div
-      style={{
-        border: "1px solid red",
-        marginRight: "10px",
-        marginLeft: "170px",
-      }}
-    >
+    <div>
       <table
         className="table table-success table-striped"
         style={{ width: "100%" }}
@@ -17,6 +14,7 @@ function Forms() {
             <th scope="col">Club Name</th>
             <th scope="col">Event Name</th>
             <th scope="col">Club Manager</th>
+            <th scope="col">Speaker - Guest</th>
             <th scope="col">Date</th>     
             <th style={{color:'black'}}>.</th>
           </tr>
@@ -25,6 +23,7 @@ function Forms() {
           <tr>
             <th scope="row">1</th>
             <td>Doğu</td>
+            <td>ARSLAN</td>
             <td>ARSLAN</td>
             <td>ARSLAN</td>
             <td>ARSLAN</td>
@@ -41,6 +40,7 @@ function Forms() {
             <td>ARSLAN</td>
             <td>ARSLAN</td>
             <td>ARSLAN</td>
+            <td>ARSLAN</td>
             <td>
               <div className="ReviewButtonAdmin">
                 <button style={{padding:'2px',borderRadius:'16px'}}>
@@ -54,6 +54,7 @@ function Forms() {
             <td>ARSLAN</td>
             <td>ARSLAN</td>
             <td>ARSLAN</td>
+            <td>ARSLAN</td>
             <td>
               <div className="ReviewButtonAdmin">
                 <button style={{padding:'2px',borderRadius:'16px'}}>
@@ -64,7 +65,7 @@ function Forms() {
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 
-export default Forms;
+export default AdminEvents

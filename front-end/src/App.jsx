@@ -14,6 +14,9 @@ import { StudentUserProvider } from "./StudentUserContext";
 import Footer from "./Component/Footer";
 import AdminLogin from "./Pages/AdminLogin";
 import Admin from "./AdminPages/Admin";
+import AdminClubs from "./AdminPages/AdminClubs"
+import AdminEvents from "./AdminPages/AdminEvents"
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +27,8 @@ function App() {
           <Route path="/LoginStaff" element={<LoginStaff />} />
           <Route path="/AdminLogin" element={<AdminLogin />} />
           <Route path="/Admin" element={<Admin />} />
+          <Route path="/AdminClubs" element={<AdminClubs/>} />
+          <Route path="/AdminEvents" element={<AdminEvents/>} />
 
           <Route
             path="*"

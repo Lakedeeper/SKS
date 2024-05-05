@@ -13,7 +13,7 @@ function AdminNavbar() {
         <div className="sidebar">
           <div className="side-header">
             <h3>
-              YU<span>REM</span>
+              <span>SKS-Admin</span>
             </h3>
           </div>
           <div className="side-content">
@@ -30,38 +30,32 @@ function AdminNavbar() {
                 <li>
                   <Link className="active">
                     <span className="las la-home" />
-                    <small>Anasayfa</small>
+                    <small>Home</small>
                   </Link>
                 </li>
 
                 <li>
                   <Link>
                     <span className="las la-swimmer active" />
-                    <small>Formlar</small>
+                   <small><Link to="/forms">Forms</Link></small>
                   </Link>
                 </li>
                 <li>
                   <Link>
                     <span className="las la-people-carry" />
-                    <small>Personeller</small>
+                    <small><Link to="/adminclubs">Clubs</Link></small>
                   </Link>
                 </li>
                 <li>
                   <Link>
                     <span className="las la-hotel" />
-                    <small>Oteller</small>
-                  </Link>
-                </li>
-                <li>
-                  <Link>
-                    <span className="las la-city" />
-                    <small>Şehirler</small>
+                    <small> <Link to="/adminevents">Events</Link></small>
                   </Link>
                 </li>
                 <li>
                   <Link>
                     <span className="las la-door-open" />
-                    <small>Çıkış</small>
+                    <small>Exit</small>
                   </Link>
                 </li>
               </ul>
@@ -86,7 +80,7 @@ function AdminNavbar() {
           <main>
             <Link>
               <div className="page-header">
-                <h1>Anasayfa</h1>
+                <h1>Home</h1>
               </div>
             </Link>
             <div className="page-content">
