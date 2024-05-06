@@ -30,16 +30,10 @@ function AdminNavbar() {
                 <li>
                   <Link className="active">
                     <span className="las la-home" />
-                    <small>Home</small>
+                    <small>Form</small>
                   </Link>
                 </li>
 
-                <li>
-                  <Link>
-                    <span className="las la-swimmer active" />
-                   <small><Link to="/forms">Forms</Link></small>
-                  </Link>
-                </li>
                 <li>
                   <Link>
                     <span className="las la-people-carry" />
