@@ -20,11 +20,15 @@ function Form() {
   <input type="text" className="formInput" placeholder="Club Name:" />
   <input type="text" className="formInput" placeholder="Event Type:" />
   <input type="email" className="formInput" placeholder="Event Name:" />
-  <input type="date" className="formInput" placeholder="Date Of Event:" />
+  <div className='dateAndTimeFormInput'>
+  <input style={{width:'50%'}} type="date" className="formInput" placeholder="Date Of Event:" />
+  <input style={{width:'50%',marginLeft:'8px'}} type="time"/>
+  </div>
   <input type="tel" className="formInput" placeholder="Subject/Content of the Event:" />
   <input type="text" className="formInput" placeholder="The Number of Participant:" />
   <input type="text" className="formInput" placeholder="The Place where Event will be:" />
   <input type="text" className="formInput" placeholder="Club Manager:" />
+  <input type="text" className="formInput" placeholder="Image (URL)" />
 
   <div class="buttonContainer">
             <button type="submit">Gönder</button>

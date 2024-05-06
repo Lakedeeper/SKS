@@ -55,7 +55,7 @@ function AdminNavbar() {
                 <li>
                   <Link>
                     <span className="las la-door-open" />
-                    <small>Exit</small>
+                    <small><Link to="/">Exit</Link></small>
                   </Link>
                 </li>
               </ul>
@@ -83,64 +83,7 @@ function AdminNavbar() {
                 <h1>Home</h1>
               </div>
             </Link>
-            <div className="page-content">
-              <div className="analytics">
-                <div className="card">
-                  <div className="card-head">
-                    <h2>Müşteri</h2>
-                    <span className="las la-swimmer" />
-                  </div>
-                  <div className="card-progress">
-                    <small>Müşteriler</small>
-                    <div className="card-indicator">
-                      <div className="indicator one" style={{ width: "60%" }} />
-                    </div>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-head">
-                    <h2>Personel</h2>
-                    <span className="las la-people-carry" />
-                  </div>
-                  <div className="card-progress">
-                    <small>Personeller</small>
-                    <div className="card-indicator">
-                      <div className="indicator two" style={{ width: "80%" }} />
-                    </div>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-head">
-                    <h2>Otel</h2>
-                    <span className="las la-hotel" />
-                  </div>
-                  <div className="card-progress">
-                    <small>Oteller</small>
-                    <div className="card-indicator">
-                      <div
-                        className="indicator three"
-                        style={{ width: "65%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-head">
-                    <h2>Şehir</h2>
-                    <span className="las la-city" />
-                  </div>
-                  <div className="card-progress">
-                    <small>Şehirler</small>
-                    <div className="card-indicator">
-                      <div
-                        className="indicator four"
-                        style={{ width: "90%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </main>
         </div>
       </div>

@@ -300,3 +300,9 @@ tr th span {
   }
 }
 
+tr td{
+  border: 1px solid black !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

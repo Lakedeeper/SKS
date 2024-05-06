@@ -85,3 +85,7 @@ justify-content: center;
 .HistoryEventsForm p{
 margin-bottom: 0px;
 }
+.dateAndTimeFormInput{
+    display:flex;
+    
+}
