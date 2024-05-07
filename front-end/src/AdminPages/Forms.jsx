@@ -53,11 +53,12 @@ function Forms() {
       <p>Club name:  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, harum!</p>
       <p>Event Type: </p>
       <p>Event Name: </p>
-      <p>Day and Time: </p>
+      <p>Day: </p>
+      <p>Time: </p>
       <p>Subject:  </p>
       <p>Number Of Participant </p>
       <p>The place: </p>
-      <p>Club Manager:   </p>
+      <p>Club Manager:  </p>
       </div>
       <div className="modal-footer">
         <button style={{backgroundColor:'red',color:'white'}} type="button" className="btn" data-bs-dismiss="modal">Red</button>

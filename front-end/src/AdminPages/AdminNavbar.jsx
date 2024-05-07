@@ -28,28 +28,28 @@ function AdminNavbar() {
             <div className="side-menu">
               <ul>
                 <li>
-                  <Link className="active">
+                  <Link style={{textDecoration:'none'}} className="active">
                     <span className="las la-home" />
                     <small>Form</small>
                   </Link>
                 </li>
 
-                <li>
-                  <Link>
-                    <span className="las la-people-carry" />
-                    <small><Link to="/adminclubs">Clubs</Link></small>
+                <li >
+                  <Link style={{textDecoration:'none'}} to="/adminclubs">
+                    <span  className="las la-people-carry" />
+                    <small>Clubs</small>
                   </Link>
                 </li>
                 <li>
-                  <Link>
+                  <Link  to="/adminevents" style={{textDecoration:'none'}}>
                     <span className="las la-hotel" />
-                    <small> <Link to="/adminevents">Events</Link></small>
+                    <small> Events</small>
                   </Link>
                 </li>
                 <li>
-                  <Link>
+                  <Link  to="/" style={{textDecoration:'none'}} >
                     <span className="las la-door-open" />
-                    <small><Link to="/">Exit</Link></small>
+                    <small>Exit</small>
                   </Link>
                 </li>
               </ul>

@@ -78,7 +78,8 @@ function AdminEvents() {
       <p>Club name:  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, harum!</p>
       <p>Event Type: </p>
       <p>Event Name: </p>
-      <p>Day and Time: </p>
+      <p>Day: </p>
+      <p>Time: </p>
       <p>Subject:  </p>
       <p>Number Of Participant </p>
       <p>The place: </p>

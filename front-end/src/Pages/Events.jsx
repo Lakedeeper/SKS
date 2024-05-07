@@ -30,7 +30,7 @@ function Events() {
 
   return (
     <div className="container">
-      <div className="row">
+      <div  className="row">
         <h1 className="EventsHeader" style={{ marginTop: "75px" }}>
           EVENTS
         </h1>
@@ -49,6 +49,7 @@ function Events() {
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
             >
+             
               <div className="card cardEvent">
                 <img
                   src={event.image}
@@ -61,6 +62,7 @@ function Events() {
                   <p className="card-text">{event.end_of_event}</p>
                 </div>
               </div>
+           
             </a>
           </div>
         ))}

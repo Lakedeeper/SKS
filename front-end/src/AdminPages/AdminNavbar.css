@@ -111,6 +111,9 @@ side-head span {
   display: block;
   padding: 1.2rem 0rem;
 }
+.side-menu ul li:hover{
+  background-color: #2b384e;
+}
 
 .side-menu a.active {
   background: #2b384e;
