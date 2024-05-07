@@ -1,17 +1,12 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import "./Events.css";
 import axios from "axios";
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 function Events() {
   const [events, setEvents] = useState([]);
 
-  const [selectedClub, setSelectedClub] = useState(null);
-
   const [selectedEvent, setSelectedEvent] = useState(null); //arif burada  da event bilgilerini tutuyoruz modalda kullanıcaz :)
-
-  console.log(selectedEvent);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,14 +25,15 @@ function Events() {
 
   return (
     <div className="container">
-      <div  className="row">
+      <div className="row">
         <h1 className="EventsHeader" style={{ marginTop: "75px" }}>
           EVENTS
         </h1>
-        <hr/>
+        <hr />
         <div className="searchBarEvents">
-         <CalendarMonthIcon/><input className="Input1Events" type="date"/>
-         <input className="Input2Events" type="text" />
+          <CalendarMonthIcon />
+          <input className="Input1Events" type="date" />
+          <input className="Input2Events" type="text" />
           <button>Search</button>
         </div>
         {events.map((event) => (
@@ -49,7 +45,6 @@ function Events() {
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
             >
-             
               <div className="card cardEvent">
                 <img
                   src={event.image}
@@ -62,7 +57,6 @@ function Events() {
                   <p className="card-text">{event.end_of_event}</p>
                 </div>
               </div>
-           
             </a>
           </div>
         ))}

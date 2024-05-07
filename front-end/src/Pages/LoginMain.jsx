@@ -1,4 +1,3 @@
-import React from "react";
 import "./LoginMain.css";
 import { useNavigate } from "react-router-dom";
 function LoginMain() {

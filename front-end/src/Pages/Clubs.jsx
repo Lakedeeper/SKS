@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import React from "react";
+
 import "./Clubs.css";
 import axios from "axios";
 
@@ -7,8 +7,6 @@ function Clubs() {
   const [clubs, setClub] = useState([]);
 
   const [selectedClub, setSelectedClub] = useState(null); //arif burada klüp bilgilerini tutuyoruz modalda kullanıcaz :)
-
-  console.log(selectedClub);
 
   useEffect(() => {
     const fetchData = async () => {

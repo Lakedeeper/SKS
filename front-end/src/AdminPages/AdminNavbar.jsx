@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import "./AdminNavbar.css";
-
-import { useEffect } from "react";
+import { useStudentUser } from "../StudentUserContext";
+import { useEffect, useState } from "react";
 
 function AdminNavbar() {
+  const [activeLink, setActiveLink] = useState("adminForm");
+  const { setComponents } = useStudentUser();
   useEffect(() => {}, []);
+
+  const handleLinkClick = (linkName) => {
+    setActiveLink(linkName);
+    setComponents(linkName);
+  };
 
   return (
     <div>
@@ -28,26 +35,42 @@ function AdminNavbar() {
             <div className="side-menu">
               <ul>
                 <li>
-                  <Link style={{textDecoration:'none'}} className="active">
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    className={activeLink === "adminForm" ? "active" : ""}
+                    onClick={() => handleLinkClick("adminForm")}
+                  >
                     <span className="las la-home" />
                     <small>Form</small>
                   </Link>
                 </li>
 
-                <li >
-                  <Link style={{textDecoration:'none'}} to="/adminclubs">
-                    <span  className="las la-people-carry" />
+                <li>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    className={activeLink === "adminClubs" ? "active" : ""}
+                    onClick={() => handleLinkClick("adminClubs")}
+                  >
+                    <span className="las la-people-carry" />
                     <small>Clubs</small>
                   </Link>
                 </li>
                 <li>
-                  <Link  to="/adminevents" style={{textDecoration:'none'}}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    className={activeLink === "adminEvents" ? "active" : ""}
+                    onClick={() => handleLinkClick("adminEvents")}
+                  >
                     <span className="las la-hotel" />
                     <small> Events</small>
                   </Link>
                 </li>
                 <li>
-                  <Link  to="/" style={{textDecoration:'none'}} >
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none" }}
+                    onClick={() => handleLinkClick("/")}
+                  >
                     <span className="las la-door-open" />
                     <small>Exit</small>
                   </Link>
@@ -77,7 +100,6 @@ function AdminNavbar() {
                 <h1>Home</h1>
               </div>
             </Link>
-            
           </main>
         </div>
       </div>

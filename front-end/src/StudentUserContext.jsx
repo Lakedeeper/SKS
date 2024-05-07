@@ -1,11 +1,12 @@
-import React, { createContext, useContext, useState } from "react";
-
+import { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 const StudentUserContext = createContext();
 
 export const StudentUserProvider = ({ children }) => {
   const [studentUser, setStudentUser] = useState(null);
   const [clubUser, setClubUser] = useState(null);
   const [adminUser, setAdminUser] = useState(null);
+  const [component, setComponents] = useState("");
   return (
     <StudentUserContext.Provider
       value={{
@@ -15,6 +16,8 @@ export const StudentUserProvider = ({ children }) => {
         setClubUser,
         adminUser,
         setAdminUser,
+        component,
+        setComponents,
       }}
     >
       {children}
@@ -23,3 +26,6 @@ export const StudentUserProvider = ({ children }) => {
 };
 
 export const useStudentUser = () => useContext(StudentUserContext);
+StudentUserProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
