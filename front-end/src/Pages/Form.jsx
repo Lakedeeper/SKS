@@ -3,6 +3,8 @@ import './Form.css'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import DoDisturbIcon from '@mui/icons-material/DoDisturb';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 function Form() {
   return (
@@ -42,7 +44,10 @@ function Form() {
             <div  className='HistoryEventForm'>
                 <div className='HistoryEventsForm'>
                     <p>istek1</p>
+                    <div style={{display:'flex'}} className='editAndPending'>
+                    <button style={{marginRight:'15px',border:'none',background:'none'}}><EditIcon/>Edit</button>
                     <p><PendingActionsIcon/></p>
+                    </div>
                 </div>
                 <div className='HistoryEventsForm'>
                     <p>istek1</p>
