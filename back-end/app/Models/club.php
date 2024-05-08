@@ -17,7 +17,7 @@ class club extends Model
         'club_exp',
         'club_logo',
         'club_id',
-        'admin_id',
+        'student_id',
 
     ];
 

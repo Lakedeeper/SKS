@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('club_name');
             $table->string('club_exp');
             $table->string('club_logo');
-            $table->integer('admin_id'); 
+            $table->integer('student_id'); 
             
         });
     }

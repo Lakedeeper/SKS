@@ -47,6 +47,12 @@ Route::get('clubs', function(Request $request) {
 });
 Route::get('/clubs/{id}', [ClubController::class, 'index']);
 
+//clubs create
+Route::post('/clubs/',[ClubController::class,'store']);
+//clubs update
+Route::put('/clubs/{id}',[ClubController::class, 'update']);
+//clubs delete
+Route::delete('/clubs/{id}',[ClubController::class, 'destroy']);
 
 //club_admins
 Route::get('club_admins', function(Request $request) {

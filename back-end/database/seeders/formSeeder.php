@@ -14,7 +14,7 @@ class formSeeder extends Seeder
     public function run(): void
     {
         form::create(
-<<<<<<< HEAD
+
             [
                 'event_name' => 'Makale Oturumları 9',
                 'club_name' => ' medtek',
@@ -63,10 +63,10 @@ class formSeeder extends Seeder
 
            ]);
 
-        }
-    }
-=======
-             [
+        
+    
+
+            form::create([
                  'event_id'=> '1000',
                  'event_name'=> 'Nasıl Tübitak 2209 Projesi Hazırlarız?',
                  'date_of_event'=> '03/08/2024',
@@ -174,4 +174,4 @@ class formSeeder extends Seeder
             
      }
  }
->>>>>>> 23557bff75b33a8d7714b16f69f88f8f3709c1f5
+
