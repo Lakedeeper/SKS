@@ -91,3 +91,10 @@ Route::get('events', function(Request $request) {
 });
 
 Route::get('/events/{id}', [eventController::class, 'index']);
+
+//events create
+Route::post('/events/',[eventController::class,'store']);
+//events update
+Route::put('/events/{id}',[eventController::class, 'update']);
+//events delete
+Route::delete('/events/{id}',[eventController::class, 'destroy']);
