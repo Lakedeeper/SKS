@@ -45,7 +45,7 @@ function Form() {
                 <div className='HistoryEventsForm'>
                     <p>istek1</p>
                     <div style={{display:'flex'}} className='editAndPending'>
-                    <button style={{marginRight:'15px',border:'none',background:'none'}}><EditIcon/>Edit</button>
+                    <button style={{marginRight:'15px',border:'none',background:'none'}}><EditIcon/></button>
                     <p><PendingActionsIcon/></p>
                     </div>
                 </div>

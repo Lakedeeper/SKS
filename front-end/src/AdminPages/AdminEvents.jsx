@@ -22,10 +22,13 @@ function AdminEvents() {
     fetchData();
   }, []);
   return (
-    <div>
-      <table
+    <div style={{
+      marginRight: "10px",
+      marginLeft: "170px",
+    }}>
+      <table 
         className="table table-success table-striped"
-        style={{ width: "100%" }}
+        style={{width:'100%'}}
       >
         <thead>
           <tr className="table-dark">

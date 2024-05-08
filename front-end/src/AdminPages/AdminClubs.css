@@ -2,3 +2,25 @@
     padding: 5px !important; 
     border-radius: 10px;
 }
+.AddClubModalInputs{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.AddClubModalInputs label{
+margin-right: 20px;
+margin-bottom: 15px;
+width: 40%;
+}
+.AddClubModalInputs input{
+    width: 100%;
+    }
+.AddButtonModalClubs{
+    padding: 2px 10px;
+    background-color: green;
+    color: white ;
+    border-radius: 10px;
+    border: none;
+    float: right;
+}

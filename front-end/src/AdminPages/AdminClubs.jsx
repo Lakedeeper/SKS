@@ -24,7 +24,10 @@ function AdminClubs() {
   const handleDelete = () => {};
 
   return (
-    <div>
+    <div  style={{
+      marginRight: "10px",
+      marginLeft: "170px",
+    }}>
       <table
         className="table table-success table-striped"
         style={{ width: "100%" }}
@@ -73,13 +76,14 @@ function AdminClubs() {
       </table>
 
       <button
-        type="button"
-        className="btn btn-warning"
-        style={{ marginLeft: "8px" }}
-      >
-        + Add Club{" "}
-      </button>
-
+                    type="button"
+                    className="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    onClick={() => setSelectedEvent(event)}
+                  >
+                   + Add Club
+                  </button>
       <div
         className="modal fade"
         id="exampleModal"
@@ -90,7 +94,7 @@ function AdminClubs() {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Club Name:
+              Adding Club
               </h1>
               <button
                 type="button"
@@ -101,16 +105,33 @@ function AdminClubs() {
             </div>
             <div
               className="modal-body ModalFormBody"
-              style={{ display: "flex", flexDirection: "column" }}
+              style={{ display: "flex", flexDirection:'column',alignItems:'baseline'}}
             >
-              <p>
-                Club name: Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Dolorum, harum!
-              </p>
-              <p>Club Manager:{selectedClub?.club_name} </p>
-              <p>Mail Address:{selectedClub?.club_name} </p>
-              <p>Description:{selectedClub?.club_name} </p>
+              <form>
+           <div className="AddClubModalInputs"> 
+             <label >Club Name:</label>
+             <input type="text" />
+             </div>
+             <div className="AddClubModalInputs"> 
+             <label >Club Manager: </label>
+             <input type="text" />
+             </div>
+             <div className="AddClubModalInputs"> 
+             <label >Mail:</label>
+             <input type="text" />
+             </div>
+             <div className="AddClubModalInputs"> 
+             <label >Description:</label>
+             <input type="text" />
+             </div>
+             <div className="AddClubModalInputs"> 
+             <label >Image(Url)</label>
+             <input type="text" />
+             </div>
+             <button className="AddButtonModalClubs">Add</button>
+             </form>
             </div>
+           
             <div className="modal-footer"></div>
           </div>
         </div>
