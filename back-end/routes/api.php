@@ -82,6 +82,13 @@ Route::get('forms', function(Request $request) {
 
 Route::get('/forms/{id}', [formController::class, 'index']);
 
+//forms create
+Route::post('/forms/',[formController::class,'store']);
+//forms update
+Route::put('/forms/{id}',[formController::class, 'update']);
+//forms delete
+Route::delete('/forms/{id}',[formController::class, 'destroy']);
+
 
 //events
 Route::get('events', function(Request $request) {
