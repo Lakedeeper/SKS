@@ -52,12 +52,12 @@ function AdminClubs() {
               <td>{club?.club_name}</td>
               <td>{club?.created_at}</td>
               <td>
-                <div className="ReviewButtonAdmin">
+              <div className="ReviewButtonAdmin">
                   <button
                     type="button"
                     className="btn btn-success"
                     data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
+                    data-bs-target="#reviewModal"
                     onClick={() => setSelectedClub(club)}
                   >
                     Review
@@ -84,6 +84,7 @@ function AdminClubs() {
                   >
                    + Add Club
                   </button>
+   {/*add club modal*/}
       <div
         className="modal fade"
         id="exampleModal"
@@ -136,6 +137,44 @@ function AdminClubs() {
           </div>
         </div>
       </div>
+
+      {/*review modal*/}
+      <div
+        className="modal fade"
+        id="reviewModal"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+             <img src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fkalp-damar-cerrahisinde-perfuzyon-44723.jpg%3Ft%3D1711322825&w=828&q=75" alt="" />
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+              Club Name
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              className="modal-body ModalFormBody"
+              style={{ display: "flex", flexDirection:'column',alignItems:'baseline'}}
+            >
+             <div>
+              <p>Club Manager: club manager</p>
+              <p>Mail Address: mail address</p>
+              <p>Description: description</p>
+
+             </div>
+           
+            <div className="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+  </div>
     </div>
   );
 }

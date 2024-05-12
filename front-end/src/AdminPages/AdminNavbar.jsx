@@ -85,18 +85,13 @@ function AdminNavbar() {
               <label htmlFor="menu-toggle">
                 <span className="las la-bars" />
               </label>
-              <div className="header-menu">
-                <div className="user">
-                  <div className="bg-img" style={{}} />
-                  <span className="las la-power-off" />
-                  <span>Logout</span>
-                </div>
+              <div className="header-menu"> 
               </div>
             </div>
           </header>
           <main>
-            <Link>
-              <div className="page-header">
+            <Link  style={{textDecoration:'none'}}>
+              <div  className="page-header">
                 <h1>Home</h1>
               </div>
             </Link>
