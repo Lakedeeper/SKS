@@ -23,15 +23,12 @@ class eventController extends Controller
      public function store(Request $request)
      {
          $validatedData = $request->validate([
-             'event_id' => 'required',
              'event_name' => 'required',
              'start_of_event' => 'required',
              'end_of_event' => 'required',
              'subject' => 'required',
              'exp' => 'required',
              'image' => 'required',
-             'club_id' => 'required',
-             'form_id' => 'required',
          ]);
      
          $event = event::create($validatedData);
@@ -50,15 +47,13 @@ class eventController extends Controller
      public function update(Request $request, $id)
  {
      $validatedData = $request->validate([
-        'event_id' => 'required',
         'event_name' => 'required',
         'start_of_event' => 'required',
         'end_of_event' => 'required',
         'subject' => 'required',
         'exp' => 'required',
         'image' => 'required',
-        'club_id' => 'required',
-        'form_id' => 'required',
+
      ]);
  
      $event = event::findOrFail($id);

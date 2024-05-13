@@ -20,9 +20,9 @@ class form extends Model
        // 'form_id',
         'adress',
       //  'admin_id',
-        'form_url',
         'image',
         'event_subject',
+        'state',
 
 
     ];

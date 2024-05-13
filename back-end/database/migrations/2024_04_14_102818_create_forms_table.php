@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('forms', function (Blueprint $table) {
-            $table->id();
+            $table->id('form_id');
             $table->timestamps();
            // $table->integer('form_id');
             $table->string('event_name');
@@ -23,9 +23,9 @@ return new class extends Migration
             $table->integer('number_of_participants');
             $table->string('adress');
           //  $table->integer('admin_id');
-            $table->string('form_url');
             $table->string('image');
             $table->string('event_subject');
+            $table->string('state');
             
 
 
