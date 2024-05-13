@@ -15,13 +15,13 @@ class sks_admin extends Model
         'surname',
         'email',
         'password',
-        'user_id',
+      //  'user_id',
     ];
     protected $guarded = [
         'name',
         'surname',
         'password',
-        'user_id',
+     //   'user_id',
 
     ];
 

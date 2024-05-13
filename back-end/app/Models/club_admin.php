@@ -11,13 +11,13 @@ class club_admin extends Model
     use HasFactory;
     
     protected $fillable = [
-        'student_id',
+        //'student_id',
         'name',
         'surname',
         'password',
         'email',
         'club_name',
-        'club_id',
+        //'club_id',
 
     ];
 

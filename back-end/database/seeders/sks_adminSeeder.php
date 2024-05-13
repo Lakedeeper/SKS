@@ -18,14 +18,14 @@ class sks_adminSeeder extends Seeder
             'surname' => 'Solak',
             'password' => '8423LEKOVICCC',
             'email' => 'Ahmet.doğukan.solak@gmail.com',
-            'user_id' => '1001',
+           // 'user_id' => '1001',
         ]);
 
         sks_admin::create([
             'name' => 'null',
             'surname' => 'null',
             'email' => 'null@gmail.com',
-            'user_id' => '0',
+           // 'user_id' => '0',
             ]);
     }
 }

@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('clubs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('club_id');
+          //  $table->integer('club_id');
             $table->string('club_name');
             $table->string('club_exp');
             $table->string('club_logo');
-            $table->integer('student_id'); 
+         //   $table->integer('student_id'); 
             
         });
     }

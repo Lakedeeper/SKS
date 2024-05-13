@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('form_id');
+           // $table->integer('form_id');
             $table->string('event_name');
             $table->string('club_name');
             $table->string('event_type');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('end_of_event');
             $table->integer('number_of_participants');
             $table->string('adress');
-            $table->integer('admin_id');
+          //  $table->integer('admin_id');
             $table->string('form_url');
             $table->string('image');
             $table->string('event_subject');

@@ -12,15 +12,15 @@ class event extends Model
     use HasFactory;
 
     protected $fillable = [
-        'event_id',
+       // 'event_id',
         'event_name',
         'start_of_event',
         'end_of_event',
         'subject',
         'exp',
         'image',
-        'club_id',
-        'form_id',
+      //  'club_id',
+       // 'form_id',
     ];
 
     protected function data(): Attribute

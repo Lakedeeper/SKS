@@ -21,13 +21,13 @@ class sks_adminFactory extends Factory
             'name' => 'Ahmet Doğukan',
             'surname' => 'Solak',
             'email' => 'Ahmet.doğukan.solak@gmail.com',
-            'user_id' => '1001',
+          //  'user_id' => '1001',
             ],
             [
                 'name' => 'null',
                 'surname' => 'null',
                 'email' => 'null@gmail.com',
-                'user_id' => '0',
+               // 'user_id' => '0',
                 ],
         ];
     }
