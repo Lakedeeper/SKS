@@ -77,7 +77,8 @@ function Forms() {
               </p>
               <p>Event Type: </p>
               <p>Event Name: </p>
-              <p>Day: </p>
+              <p>Starting Day: </p>
+              <p>Ending Day: </p>
               <p>Time: </p>
               <p>Subject: </p>
               <p>Number Of Participant </p>

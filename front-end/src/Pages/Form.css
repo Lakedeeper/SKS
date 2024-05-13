@@ -86,6 +86,12 @@ justify-content: center;
 margin-bottom: 0px;
 }
 .dateAndTimeFormInput{
-    display:flex;
-    
+    display:flex;    
+}
+
+.dateAndTimeFormInput label{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0px 10px;
 }
