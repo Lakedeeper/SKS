@@ -21,13 +21,22 @@ function AdminClubs() {
     fetchData();
   }, []);
 
-  const handleDelete = () => {};
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://127.0.0.1:8000/api/clubs/${id}`);
+      setClub(clubs.filter((club) => club.id !== id));
+    } catch (error) {
+      console.error("Error deleting club:", error);
+    }
+  };
 
   return (
-    <div  style={{
-      marginRight: "10px",
-      marginLeft: "170px",
-    }}>
+    <div
+      style={{
+        marginRight: "10px",
+        marginLeft: "170px",
+      }}
+    >
       <table
         className="table table-success table-striped"
         style={{ width: "100%" }}
@@ -52,7 +61,7 @@ function AdminClubs() {
               <td>{club?.club_name}</td>
               <td>{club?.created_at}</td>
               <td>
-              <div className="ReviewButtonAdmin">
+                <div className="ReviewButtonAdmin">
                   <button
                     type="button"
                     className="btn btn-success"
@@ -76,15 +85,15 @@ function AdminClubs() {
       </table>
 
       <button
-                    type="button"
-                    className="btn btn-success"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    onClick={() => setSelectedEvent(event)}
-                  >
-                   + Add Club
-                  </button>
-   {/*add club modal*/}
+        type="button"
+        className="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        // onClick={() => setSelectedEvent(event)}
+      >
+        + Add Club
+      </button>
+      {/*add club modal*/}
       <div
         className="modal fade"
         id="exampleModal"
@@ -95,7 +104,7 @@ function AdminClubs() {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-              Adding Club
+                Adding Club
               </h1>
               <button
                 type="button"
@@ -106,33 +115,37 @@ function AdminClubs() {
             </div>
             <div
               className="modal-body ModalFormBody"
-              style={{ display: "flex", flexDirection:'column',alignItems:'baseline'}}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "baseline",
+              }}
             >
               <form>
-           <div className="AddClubModalInputs"> 
-             <label >Club Name:</label>
-             <input type="text" />
-             </div>
-             <div className="AddClubModalInputs"> 
-             <label >Club Manager: </label>
-             <input type="text" />
-             </div>
-             <div className="AddClubModalInputs"> 
-             <label >Mail:</label>
-             <input type="text" />
-             </div>
-             <div className="AddClubModalInputs"> 
-             <label >Description:</label>
-             <input type="text" />
-             </div>
-             <div className="AddClubModalInputs"> 
-             <label >Image(Url)</label>
-             <input type="text" />
-             </div>
-             <button className="AddButtonModalClubs">Add</button>
-             </form>
+                <div className="AddClubModalInputs">
+                  <label>Club Name:</label>
+                  <input type="text" />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Club Manager: </label>
+                  <input type="text" />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Mail:</label>
+                  <input type="text" />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Description:</label>
+                  <input type="text" />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Image(Url)</label>
+                  <input type="text" />
+                </div>
+                <button className="AddButtonModalClubs">Add</button>
+              </form>
             </div>
-           
+
             <div className="modal-footer"></div>
           </div>
         </div>
@@ -148,9 +161,12 @@ function AdminClubs() {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-             <img src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fkalp-damar-cerrahisinde-perfuzyon-44723.jpg%3Ft%3D1711322825&w=828&q=75" alt="" />
+              <img
+                src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fkalp-damar-cerrahisinde-perfuzyon-44723.jpg%3Ft%3D1711322825&w=828&q=75"
+                alt=""
+              />
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-              Club Name
+                Club Name
               </h1>
               <button
                 type="button"
@@ -161,20 +177,23 @@ function AdminClubs() {
             </div>
             <div
               className="modal-body ModalFormBody"
-              style={{ display: "flex", flexDirection:'column',alignItems:'baseline'}}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "baseline",
+              }}
             >
-             <div>
-              <p>Club Manager: club manager</p>
-              <p>Mail Address: mail address</p>
-              <p>Description: description</p>
+              <div>
+                <p>Club Manager: club manager</p>
+                <p>Mail Address: mail address</p>
+                <p>Description: description</p>
+              </div>
 
-             </div>
-           
-            <div className="modal-footer"></div>
+              <div className="modal-footer"></div>
+            </div>
           </div>
         </div>
       </div>
-  </div>
     </div>
   );
 }

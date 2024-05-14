@@ -5,7 +5,8 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 function Events() {
   const [events, setEvents] = useState([]);
-
+  const [searchTerm, setSearchTerm] = useState([]);
+  const [originalEvents, setOriginalEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null); //arif burada  da event bilgilerini tutuyoruz modalda kullanıcaz :)
 
   useEffect(() => {
@@ -14,6 +15,7 @@ function Events() {
         const response = await axios.get("http://127.0.0.1:8000/api/events");
         console.log(response.data);
         setEvents(response.data);
+        setOriginalEvents(response.data);
         console.log(events);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -22,6 +24,13 @@ function Events() {
 
     fetchData();
   }, []);
+
+  const HandleSearch = () => {
+    const filteredEvents = originalEvents.filter((event) =>
+      event.event_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setEvents(filteredEvents);
+  };
 
   return (
     <div className="container">
@@ -33,8 +42,13 @@ function Events() {
         <div className="searchBarEvents">
           <CalendarMonthIcon />
           <input className="Input1Events" type="date" />
-          <input className="Input2Events" type="text" />
-          <button>Search</button>
+          <input
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="Input2Events"
+            type="text"
+          />
+          <button onClick={HandleSearch}>Search</button>
         </div>
         {events.map((event) => (
           <div className="col-md-3" key={event.id}>

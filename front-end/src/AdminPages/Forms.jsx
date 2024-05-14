@@ -1,4 +1,23 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 function Forms() {
+  const [forms, setForms] = useState([]);
+  const [selectedForm, setSelectedForm] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/forms");
+        console.log(response.data);
+        setForms(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div
       style={{
@@ -21,25 +40,28 @@ function Forms() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Doğu</td>
-            <td>ARSLAN</td>
-            <td>ARSLAN</td>
-            <td>ARSLAN</td>
-            <td>
-              <div className="ReviewButtonAdmin">
-                <button
-                  type="button"
-                  className="btn btn-success"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  Review
-                </button>
-              </div>
-            </td>
-          </tr>
+          {forms.map((form, index) => (
+            <tr key={index}>
+              <th scope="row">{index + 1}</th>
+              <td>{form.club_name}</td>
+              <td>{form.event_name}</td>
+              <td>{form.club_manager}</td>
+              <td>{form.date}</td>
+              <td>
+                <div className="ReviewButtonAdmin">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    onClick={() => setSelectedForm(form)}
+                  >
+                    Review
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
@@ -53,11 +75,12 @@ function Forms() {
           <div className="modal-content">
             <div className="modal-header">
               <img
-                src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fkalp-damar-cerrahisinde-perfuzyon-44723.jpg%3Ft%3D1711322825&w=828&q=75"
+                src={selectedForm ? selectedForm.image_url : ""}
                 alt=""
+                style={{ width: "100%", height: "auto" }}
               />
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Event Name
+                {selectedForm ? selectedForm.event_name : "Event Name"}
               </h1>
 
               <button
@@ -71,19 +94,25 @@ function Forms() {
               className="modal-body ModalFormBody"
               style={{ display: "flex", flexDirection: "column" }}
             >
-              <p>
-                Club name: Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Dolorum, harum!
-              </p>
-              <p>Event Type: </p>
-              <p>Event Name: </p>
-              <p>Starting Day: </p>
-              <p>Ending Day: </p>
-              <p>Time: </p>
-              <p>Subject: </p>
-              <p>Number Of Participant </p>
-              <p>The place: </p>
-              <p>Club Manager: </p>
+              {selectedForm ? (
+                <>
+                  <p>Club name: {selectedForm.club_name}</p>
+                  <p>Event Type: {selectedForm.event_type}</p>
+                  <p>Event Name: {selectedForm.event_name}</p>
+                  <p>Starting Day: {selectedForm.start_of_event}</p>
+                  <p>Ending Day: {selectedForm.end_of_event}</p>
+                  <p>Time: {selectedForm.time}</p>
+                  <p>Subject: {selectedForm.subject}</p>
+                  <p>
+                    Number Of Participants:{" "}
+                    {selectedForm.number_of_participants}
+                  </p>
+                  <p>The place: {selectedForm.place}</p>
+                  <p>Club Manager: {selectedForm.club_manager}</p>
+                </>
+              ) : (
+                <p>Loading...</p>
+              )}
             </div>
             <div className="modal-footer">
               <button

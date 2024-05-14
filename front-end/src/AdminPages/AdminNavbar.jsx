@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 function AdminNavbar() {
   const [activeLink, setActiveLink] = useState("adminForm");
-  const { setComponents } = useStudentUser();
+  const { component, setComponents } = useStudentUser();
   useEffect(() => {}, []);
 
   const handleLinkClick = (linkName) => {
@@ -85,14 +85,21 @@ function AdminNavbar() {
               <label htmlFor="menu-toggle">
                 <span className="las la-bars" />
               </label>
-              <div className="header-menu"> 
-              </div>
+              <div className="header-menu"></div>
             </div>
           </header>
           <main>
-            <Link  style={{textDecoration:'none'}}>
-              <div  className="page-header">
-                <h1>Home</h1>
+            <Link style={{ textDecoration: "none" }}>
+              <div className="page-header">
+                {component === "adminForm" ? (
+                  <h1>Forms</h1>
+                ) : component === "adminClubs" ? (
+                  <h1>Clubs</h1>
+                ) : component === "adminEvents" ? (
+                  <h1>Events</h1>
+                ) : (
+                  <h1>Forms</h1>
+                )}
               </div>
             </Link>
           </main>
