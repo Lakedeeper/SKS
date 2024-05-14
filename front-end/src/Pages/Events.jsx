@@ -51,7 +51,7 @@ function Events() {
           <button onClick={HandleSearch}>Search</button>
         </div>
         {events.map((event) => (
-          <div className="col-md-3" key={event.id}>
+          <div className="col-md-3" key={event.event_id}>
             <a
               onClick={() => setSelectedEvent(event)}
               type="button"

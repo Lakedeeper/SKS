@@ -23,9 +23,10 @@ function AdminEvents() {
   }, []);
 
   const handleDelete = async (id) => {
+    console.log(id);
     try {
       await axios.delete(`http://127.0.0.1:8000/api/events/${id}`);
-      setEvents(events.filter((club) => club.id !== id));
+      setEvents(events.filter((event) => event.id !== id));
     } catch (error) {
       console.error("Error deleting club:", error);
     }

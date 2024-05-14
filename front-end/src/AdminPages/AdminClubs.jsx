@@ -22,6 +22,7 @@ function AdminClubs() {
   }, []);
 
   const handleDelete = async (id) => {
+    console.log(" id", id);
     try {
       await axios.delete(`http://127.0.0.1:8000/api/clubs/${id}`);
       setClub(clubs.filter((club) => club.id !== id));
