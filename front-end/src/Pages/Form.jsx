@@ -32,7 +32,6 @@ function Form() {
   <input type="tel" className="formInput" placeholder="Subject/Content of the Event:" />
   <input type="text" className="formInput" placeholder="The Number of Participant:" />
   <input type="text" className="formInput" placeholder="The Place where Event will be:" />
-  <input type="text" className="formInput" placeholder="Club Manager:" />
   <input type="text" className="formInput" placeholder="Image (URL)" />
 
   <div className="buttonContainer">
@@ -60,7 +59,6 @@ function Form() {
             <th scope="col">#</th>
             <th scope="col">Club Name</th>
             <th scope="col">Event Name</th>
-            <th scope="col">Club Manager</th>
             <th scope="col">Date</th>
             <th style={{ color: "black" }}></th>
             <th style={{ color: "black" }}></th>
@@ -73,7 +71,7 @@ function Form() {
               <th scope="row">1</th>
               <td>club Name</td>
               <td>EventName</td>
-              <td>Club Manager</td>
+              
               <td>Date</td>
               <td>
                 <div className="ReviewButtonAdmin">
@@ -164,10 +162,7 @@ function Form() {
                   <label>The place:</label>
                   <input type="text" placeholder='The Place' />
                 </div>
-                <div className="AddClubModalInputs">
-                  <label>Club Manager:</label>
-                  <input type="text" placeholder='Club Manager' />
-                </div>
+               
                 <div className="AddClubModalInputs">
                   <label>Image (Url)</label>
                   <input type="text" placeholder='Image(Url)' />
@@ -226,7 +221,7 @@ function Form() {
                    
                   </p>
                   <p>The place: </p>
-                  <p>Club Manager:</p>
+                 
                 </>
               
             </div>
@@ -268,7 +263,7 @@ function Form() {
             <th scope="col">#</th>
             <th scope="col">Club Name</th>
             <th scope="col">Event Name</th>
-            <th scope="col">Club Manager</th>
+           
             <th scope="col">Date</th>
             <th style={{ color: "black" }}>.</th>
           </tr>
@@ -279,7 +274,7 @@ function Form() {
               <th scope="row">1</th>
               <td>club Name</td>
               <td>EventName</td>
-              <td>Club Manager</td>
+              
               <td>Date</td>
               <td>
                 <div className="ReviewButtonAdmin">
@@ -341,7 +336,7 @@ function Form() {
                    
                   </p>
                   <p>The place: </p>
-                  <p>Club Manager:</p>
+                  
                 </>
               
              
@@ -385,7 +380,7 @@ function Form() {
             <th scope="col">#</th>
             <th scope="col">Club Name</th>
             <th scope="col">Event Name</th>
-            <th scope="col">Club Manager</th>
+            
             <th scope="col">Date</th>
             <th style={{ color: "black" }}>.</th>
           </tr>
@@ -396,7 +391,7 @@ function Form() {
               <th scope="row">1</th>
               <td>club Name</td>
               <td>EventName</td>
-              <td>Club Manager</td>
+              
               <td>Date</td>
               <td>
                 <div className="ReviewButtonAdmin">
@@ -458,7 +453,7 @@ function Form() {
                    
                   </p>
                   <p>The place: </p>
-                  <p>Club Manager:</p>
+                
                 </>
               
              
