@@ -13,6 +13,44 @@ function Form() {
   const [publishedForm, setPublishedForm] = useState([]);
   const [selectedForm, setSelectedForm] = useState(null);
 
+  const [formData, setFormData] = useState({
+    club_name: "",
+    event_type: "",
+    event_name: "",
+    start_of_event: "",
+    end_of_event: "",
+    time: "",
+    event_subject: "",
+    number_of_participants: "",
+    event_place: "",
+    image: "",
+    state: "pending",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    console.log(formData);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/forms", {
+        ...formData,
+        adress: formData.event_place,
+        number_of_participants: parseInt(formData.number_of_participants),
+      });
+      console.log("Success:", response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   console.log("selectedForm", selectedForm);
 
   useEffect(() => {
@@ -79,58 +117,91 @@ function Form() {
             </div>
           </div>
           <div className="formMain">
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
                 type="text"
+                name="club_name"
                 className="formInput"
                 placeholder="Club Name:"
+                value={formData.club_name}
+                onChange={handleChange}
               />
               <input
                 type="text"
+                name="event_type"
                 className="formInput"
                 placeholder="Event Type:"
+                value={formData.event_type}
+                onChange={handleChange}
               />
               <input
-                type="email"
+                type="text"
+                name="event_name"
                 className="formInput"
                 placeholder="Event Name:"
+                value={formData.event_name}
+                onChange={handleChange}
               />
               <div className="dateAndTimeFormInput">
                 <label className="fw-medium">Starting Date:</label>
                 <input
                   style={{ width: "50%" }}
                   type="date"
+                  name="start_of_event"
                   className="formInput"
                   placeholder="Date Of Event:"
+                  value={formData.start_of_event}
+                  onChange={handleChange}
                 />
                 <label className="fw-medium">Ending Date:</label>
-                <input style={{ width: "50%" }} type="date" name="" id="" />
+                <input
+                  style={{ width: "50%" }}
+                  type="date"
+                  name="end_of_event"
+                  className="formInput"
+                  value={formData.end_of_event}
+                  onChange={handleChange}
+                />
                 <input
                   style={{ width: "40%", marginLeft: "8px" }}
                   type="time"
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
                 />
               </div>
               <input
                 type="tel"
+                name="event_subject"
                 className="formInput"
                 placeholder="Subject/Content of the Event:"
+                value={formData.event_subject}
+                onChange={handleChange}
               />
               <input
                 type="text"
+                name="number_of_participants"
                 className="formInput"
                 placeholder="The Number of Participant:"
+                value={formData.number_of_participants}
+                onChange={handleChange}
               />
               <input
                 type="text"
+                name="event_place"
                 className="formInput"
                 placeholder="The Place where Event will be:"
+                value={formData.event_place}
+                onChange={handleChange}
               />
               <input
                 type="text"
+                name="image"
                 className="formInput"
                 placeholder="Image (URL)"
+                value={formData.image}
+                onChange={handleChange}
               />
-
               <div className="buttonContainer">
                 <button type="submit">Gönder</button>
               </div>
