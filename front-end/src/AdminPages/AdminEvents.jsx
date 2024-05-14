@@ -21,14 +21,25 @@ function AdminEvents() {
 
     fetchData();
   }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://127.0.0.1:8000/api/events/${id}`);
+      setEvents(events.filter((club) => club.id !== id));
+    } catch (error) {
+      console.error("Error deleting club:", error);
+    }
+  };
   return (
-    <div style={{
-      marginRight: "10px",
-      marginLeft: "170px",
-    }}>
-      <table 
+    <div
+      style={{
+        marginRight: "10px",
+        marginLeft: "170px",
+      }}
+    >
+      <table
         className="table table-success table-striped"
-        style={{width:'100%'}}
+        style={{ width: "100%" }}
       >
         <thead>
           <tr className="table-dark">
@@ -64,7 +75,15 @@ function AdminEvents() {
                   </button>
                 </div>
               </td>
-              <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
+              <td>
+                <button
+                  type="button"
+                  className="btn btn-outline-danger"
+                  onClick={() => handleDelete(event.id)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
