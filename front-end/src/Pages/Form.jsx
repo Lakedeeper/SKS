@@ -46,6 +46,7 @@ function Form() {
         number_of_participants: parseInt(formData.number_of_participants),
       });
       console.log("Success:", response.data);
+      window.location.reload();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -99,6 +100,44 @@ function Form() {
     fetchData2();
     fetchData3();
   }, []);
+
+  const OnayButton = async (model) => {
+    try {
+      const updatedForm = { ...model, state: "publish" };
+      const response = await axios.put(
+        `http://127.0.0.1:8000/api/forms/${model.id}/`,
+        updatedForm
+      );
+      console.log(response.data);
+
+      const fetchUpdatedForms = async () => {
+        try {
+          const response = await axios.get("http://127.0.0.1:8000/api/forms");
+
+          const pendingForms = response.data.filter(
+            (form) => form.state.trim() === "pending"
+          );
+          setPendingFrom(pendingForms);
+
+          const publishForms = response.data.filter(
+            (form) => form.state.trim() === "publish"
+          );
+          setClubOnayForm(publishForms);
+
+          const publishedForms = response.data.filter(
+            (form) => form.state.trim() === "published"
+          );
+          setPublishedForm(publishedForms);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+      fetchUpdatedForms();
+      window.location.reload();
+    } catch (error) {
+      console.error("Error updating form:", error);
+    }
+  };
 
   return (
     <>
@@ -309,23 +348,20 @@ function Form() {
                       <p>The place:{selectedForm?.event_name} </p>
                     </>
                   </div>
-                  <div className="modal-footer">
-                    <button
-                      style={{ backgroundColor: "red", color: "white" }}
-                      type="button"
-                      className="btn"
-                      data-bs-dismiss="modal"
-                    >
-                      Red
-                    </button>
-                    <button
-                      style={{ backgroundColor: "green", color: "white" }}
-                      type="button"
-                      className="btn"
-                    >
-                      Onay
-                    </button>
-                  </div>
+                  {selectedForm?.state === "clubOnay" ? (
+                    <div className="modal-footer">
+                      <button
+                        style={{ backgroundColor: "green", color: "white" }}
+                        type="button"
+                        className="btn"
+                        onClick={() => OnayButton(selectedForm)}
+                      >
+                        Onay
+                      </button>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>

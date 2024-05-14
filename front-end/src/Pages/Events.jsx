@@ -9,10 +9,11 @@ function Events() {
   const [originalEvents, setOriginalEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null); //arif burada  da event bilgilerini tutuyoruz modalda kullanıcaz :)
 
+  console.log("selected", selectedEvent);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/events");
+        const response = await axios.get("http://127.0.0.1:8000/api/forms");
         console.log(response.data);
         setEvents(response.data);
         setOriginalEvents(response.data);
@@ -51,7 +52,7 @@ function Events() {
           <button onClick={HandleSearch}>Search</button>
         </div>
         {events.map((event) => (
-          <div className="col-md-3" key={event.event_id}>
+          <div className="col-md-3" key={event.id}>
             <a
               onClick={() => setSelectedEvent(event)}
               type="button"
@@ -97,7 +98,6 @@ function Events() {
                 <h1 className="modal-title fs-5" id="staticBackdropLabel">
                   {selectedEvent !== null ? selectedEvent.event_name : ""}
                 </h1>
-                <p>Öğretim üyesi : /isim soyisim/</p>
               </div>
               <button
                 type="button"
@@ -107,16 +107,19 @@ function Events() {
               />
             </div>
             <div className="modal-body">
-              {selectedEvent !== null ? selectedEvent.subject : ""}
+              {selectedEvent !== null ? selectedEvent.event_subject : ""}
             </div>
             <p style={{ marginLeft: "15px" }}>
-              {selectedEvent !== null ? selectedEvent.exp : ""}
+              {selectedEvent !== null ? selectedEvent.event_type : ""}
             </p>
             <div className="modal-footer">
               <h6>Event Informations:</h6>
+              {selectedEvent !== null ? selectedEvent.adress : ""}
             </div>
             <p style={{ marginLeft: "15px" }}>
-              Event date and time: Tarih - Saat
+              {selectedEvent !== null ? selectedEvent.start_of_event : ""} -
+              {selectedEvent !== null ? selectedEvent.end_of_event : ""} -{" "}
+              {selectedEvent !== null ? selectedEvent.time : ""}
             </p>
           </div>
         </div>
