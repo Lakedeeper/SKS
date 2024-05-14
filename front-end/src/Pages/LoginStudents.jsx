@@ -26,7 +26,7 @@ function LoginStudents() {
 
         localStorage.setItem("studentUser", JSON.stringify(matchedUser));
 
-        navigate("/Events");
+        navigate("/HomePage");
         window.location.reload();
       } else {
         alert("Hatalı giriş ");

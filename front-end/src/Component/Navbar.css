@@ -21,6 +21,9 @@
 .nav-link {
   color: #113d43;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {

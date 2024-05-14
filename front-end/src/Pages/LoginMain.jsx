@@ -15,7 +15,7 @@ function LoginMain() {
         <button className="button1" onClick={() => navigate("/LoginStudents")}>
           STUDENT
         </button>
-        <button className="WithoutLogin" onClick={() => navigate("/Events")}>
+        <button className="WithoutLogin" onClick={() => navigate("/HomePage")}>
           continue without login
         </button>
       </div>
