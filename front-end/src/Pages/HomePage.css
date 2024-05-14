@@ -54,3 +54,24 @@
     font-style: italic;
   }
  
+  .carouselHP{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-right: 50px;
+  }
+  
+  .TotalSecondDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
