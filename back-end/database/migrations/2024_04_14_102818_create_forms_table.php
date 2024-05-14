@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('event_name');
             $table->string('club_name');
             $table->string('event_type');
+            $table->string('time');
             $table->date('start_of_event');
             $table->date('end_of_event');
             $table->integer('number_of_participants');

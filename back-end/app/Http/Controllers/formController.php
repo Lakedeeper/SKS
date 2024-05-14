@@ -32,6 +32,7 @@ class formController extends Controller
         'image' => 'required',
         'event_subject' => 'required',
         'state' => 'required',
+        'time' => 'required',
         ]);
     
         $form = form::create($validatedData);
@@ -60,6 +61,7 @@ class formController extends Controller
         'image' => 'required',
         'event_subject' => 'required',
         'state' => 'required',
+        'time' => 'required',
     ]);
 
     $form = form::findOrFail($id);

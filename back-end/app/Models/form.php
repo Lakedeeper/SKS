@@ -23,6 +23,7 @@ class form extends Model
         'image',
         'event_subject',
         'state',
+        'time',
 
 
     ];
