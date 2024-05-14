@@ -23,9 +23,9 @@ function Form() {
   <input type="text" className="formInput" placeholder="Event Type:" />
   <input type="email" className="formInput" placeholder="Event Name:" />
   <div className='dateAndTimeFormInput'>
-  <label class="fw-medium">Starting Date:</label>
+  <label className="fw-medium">Starting Date:</label>
   <input style={{width:'50%'}} type="date" className="formInput" placeholder="Date Of Event:" />
-  <label class="fw-medium">Ending Date:</label>
+  <label className="fw-medium">Ending Date:</label>
   <input style={{width:'50%'}} type="date" name="" id="" />
   <input style={{width:'40%',marginLeft:'8px'}} type="time"/>
   </div>
@@ -35,7 +35,7 @@ function Form() {
   <input type="text" className="formInput" placeholder="Club Manager:" />
   <input type="text" className="formInput" placeholder="Image (URL)" />
 
-  <div class="buttonContainer">
+  <div className="buttonContainer">
             <button type="submit">Gönder</button>
         </div>
 </form>
@@ -89,7 +89,7 @@ function Form() {
               </td>
               <td>
                 <div className="ReviewButtonAdmin">
-                <button type="button" class="btn btn-warning"
+                <button type="button" className="btn btn-warning"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal4">Edit
                 </button>
@@ -174,7 +174,7 @@ function Form() {
                 </div>
                 
 
-                <button style={{float:'right'}} type="button" class="btn btn-warning">Edit</button>
+                <button style={{float:'right'}} type="button" className="btn btn-warning">Edit</button>
               </form>
             </div>
 
