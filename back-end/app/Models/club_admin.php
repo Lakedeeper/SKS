@@ -20,6 +20,7 @@ class club_admin extends Model
         'surname',
         'password',
         'email',
+        'club_id',
         //'club_name',
         //'club_id',
 
