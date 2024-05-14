@@ -38,7 +38,8 @@ function AdminEvents() {
             <th scope="col">Club Manager</th>
             <th scope="col">Speaker - Guest</th>
             <th scope="col">Date</th>
-            <th style={{ color: "black" }}>.</th>
+            <th style={{ color: "black" }}></th>
+            <th style={{ color: "black" }}></th>
           </tr>
         </thead>
         <tbody>
@@ -63,6 +64,7 @@ function AdminEvents() {
                   </button>
                 </div>
               </td>
+              <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
             </tr>
           ))}
         </tbody>
