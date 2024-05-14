@@ -42,28 +42,435 @@ function Form() {
 
         </div>
         </div>
-        <div className='HistoryForm'>
 
-            <div  className='HistoryEventForm'>
-                <div className='HistoryEventsForm'>
-                    <p>istek1</p>
-                    <div style={{display:'flex'}} className='editAndPending'>
-                    <button style={{marginRight:'15px',border:'none',background:'none'}}><EditIcon/></button>
-                    <p><PendingActionsIcon/></p>
-                    </div>
+        <div className='FormPageHistoricalEventLists'>
+        <div
+      style={{
+        marginRight: "10px",
+        marginLeft: "170px",
+      }}
+    >
+      <p style={{margin:'20px 10px',fontSize:'30px',textAlign:'center'}}>Pending</p>
+      <table
+        className="table table-success table-striped"
+        style={{ width: "100%" }}
+      >
+        <thead>
+          <tr className="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Club Name</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Club Manager</th>
+            <th scope="col">Date</th>
+            <th style={{ color: "black" }}></th>
+            <th style={{ color: "black" }}></th>
+
+          </tr>
+        </thead>
+        <tbody>
+         
+            <tr>
+              <th scope="row">1</th>
+              <td>club Name</td>
+              <td>EventName</td>
+              <td>Club Manager</td>
+              <td>Date</td>
+              <td>
+                <div className="ReviewButtonAdmin">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal3" 
+                  >
+                    Review
+                  </button>
                 </div>
-                <div className='HistoryEventsForm'>
-                    <p>istek1</p>
-                    <p style={{ color: 'red' }}><DoDisturbIcon/></p>
+              </td>
+              <td>
+                <div className="ReviewButtonAdmin">
+                <button type="button" class="btn btn-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal4">Edit
+                </button>
                 </div>
-                <div className='HistoryEventsForm'>
-                    <p>istek3</p>
-                    <p style={{ color: 'green' }}><CheckCircleIcon/></p>
+              </td>
+            </tr>
+         
+        </tbody>
+      </table>
+
+      <div
+        className="modal fade"
+        id="exampleModal4"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                Edit Event
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              className="modal-body ModalFormBody"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "baseline",
+              }}
+            >
+              <form>
+                <div className="AddClubModalInputs">
+                  <label>Club Name:</label>
+                  <input type="text" placeholder='club Name' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Event Type: </label>
+                  <input type="text" placeholder='Event type' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Event Name:</label>
+                  <input type="text" placeholder='Event Name'/>
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Starting Date:</label>
+                  <input type="date" placeholder='Starting Date'/>
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Ending Date: </label>
+                  <input type="date" placeholder='Ending Date' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Time:</label>
+                  <input type="time" placeholder='Ending Date' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Subject/Content:</label>
+                  <input type="text" placeholder='Subject/Content' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Participant:</label>
+                  <input type="text" placeholder='Participant' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>The place:</label>
+                  <input type="text" placeholder='The Place' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Club Manager:</label>
+                  <input type="text" placeholder='Club Manager' />
+                </div>
+                <div className="AddClubModalInputs">
+                  <label>Image (Url)</label>
+                  <input type="text" placeholder='Image(Url)' />
                 </div>
                 
-            </div>
-        </div>
 
+                <button style={{float:'right'}} type="button" class="btn btn-warning">Edit</button>
+              </form>
+            </div>
+
+            <div className="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="modal fade"
+        id="exampleModal3"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <img
+                src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fnorodejeneratif-hastaliklar-zirvesi-45188.jpg%3Ft%3D1715551632&w=1920&q=75"
+                alt=""
+                style={{ width: "150px", height: "auto" }}
+              />
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                EventName
+              </h1>
+
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              className="modal-body ModalFormBody"
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              
+                <>
+                  <p>Club name:</p>
+                  <p>Event Type:</p>
+                  <p>Event Name:</p>
+                  <p>Starting Day:</p>
+                  <p>Ending Day:</p>
+                  <p>Time:</p>
+                  <p>Subject:</p>
+                  <p>
+                    Number Of Participants:
+                   
+                  </p>
+                  <p>The place: </p>
+                  <p>Club Manager:</p>
+                </>
+              
+            </div>
+            <div className="modal-footer">
+              <button
+                style={{ backgroundColor: "red", color: "white" }}
+                type="button"
+                className="btn"
+                data-bs-dismiss="modal"
+              >
+                Red
+              </button>
+              <button
+                style={{ backgroundColor: "green", color: "white" }}
+                type="button"
+                className="btn"
+              >
+                Onay
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div
+      style={{
+        marginRight: "10px",
+        marginLeft: "170px",
+      }}
+    >
+      <p style={{margin:'20px 10px',fontSize:'30px',textAlign:'center'}}>Club Approval</p>
+      <table
+        className="table table-success table-striped"
+        style={{ width: "100%" }}
+      >
+        <thead>
+          <tr className="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Club Name</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Club Manager</th>
+            <th scope="col">Date</th>
+            <th style={{ color: "black" }}>.</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+            <tr>
+              <th scope="row">1</th>
+              <td>club Name</td>
+              <td>EventName</td>
+              <td>Club Manager</td>
+              <td>Date</td>
+              <td>
+                <div className="ReviewButtonAdmin">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal2" 
+                  >
+                    Review
+                  </button>
+                </div>
+              </td>
+            </tr>
+         
+        </tbody>
+      </table>
+
+      <div
+        className="modal fade"
+        id="exampleModal2"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <img
+                src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fnorodejeneratif-hastaliklar-zirvesi-45188.jpg%3Ft%3D1715551632&w=1920&q=75"
+                alt=""
+                style={{ width: "150px", height: "auto" }}
+              />
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                EventName
+              </h1>
+
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              className="modal-body ModalFormBody"
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              
+                <>
+                  <p>Club namesss:</p>
+                  <p>Event Type:</p>
+                  <p>Event Name:</p>
+                  <p>Starting Day:</p>
+                  <p>Ending Day:</p>
+                  <p>Time:</p>
+                  <p>Subject:</p>
+                  <p>
+                    Number Of Participants:
+                   
+                  </p>
+                  <p>The place: </p>
+                  <p>Club Manager:</p>
+                </>
+              
+             
+            </div>
+            <div className="modal-footer">
+              <button
+                style={{ backgroundColor: "red", color: "white" }}
+                type="button"
+                className="btn"
+                data-bs-dismiss="modal"
+              >
+                Delete
+              </button>
+              <button
+                style={{ backgroundColor: "green", color: "white" }}
+                type="button"
+                className="btn"
+              >
+                Push
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      <div
+      style={{
+        marginRight: "10px",
+        marginLeft: "170px",
+      }}
+    >
+      <p style={{margin:'20px 10px',fontSize:'30px',textAlign:'center'}}>Published</p>
+      <table
+        className="table table-success table-striped"
+        style={{ width: "100%" }}
+      >
+        <thead>
+          <tr className="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Club Name</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Club Manager</th>
+            <th scope="col">Date</th>
+            <th style={{ color: "black" }}>.</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+            <tr>
+              <th scope="row">1</th>
+              <td>club Name</td>
+              <td>EventName</td>
+              <td>Club Manager</td>
+              <td>Date</td>
+              <td>
+                <div className="ReviewButtonAdmin">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" 
+                  >
+                    Review
+                  </button>
+                </div>
+              </td>
+            </tr>
+         
+        </tbody>
+      </table>
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <img
+                src="https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fnorodejeneratif-hastaliklar-zirvesi-45188.jpg%3Ft%3D1715551632&w=1920&q=75"
+                alt=""
+                style={{ width: "150px", height: "auto" }}
+              />
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                EventName
+              </h1>
+
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              className="modal-body ModalFormBody"
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              
+                <>
+                  <p>Club name:</p>
+                  <p>Event Type:</p>
+                  <p>Event Name:</p>
+                  <p>Starting Day:</p>
+                  <p>Ending Day:</p>
+                  <p>Time:</p>
+                  <p>Subject:</p>
+                  <p>
+                    Number Of Participants:
+                   
+                  </p>
+                  <p>The place: </p>
+                  <p>Club Manager:</p>
+                </>
+              
+             
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      </div>
         </div>
         </>
 
