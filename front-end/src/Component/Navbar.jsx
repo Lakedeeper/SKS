@@ -74,26 +74,31 @@ function Navbar() {
           ) : (
             ""
           )}
-          <NavLink
-            className="nav-link "
-            style={{
-              border: "1px solid #008080",
-              width: "100px",
-              height: "50px",
-              borderRadius: "30px",
-              backgroundColor: "	#008080",
-              fontSize: "20px",
-              color: "#87ceeb",
-            }}
-          >
-            {studentUser != null
-              ? studentUser.name
-              : clubUser != null
-              ? clubUser.name
-              : adminUser != null
-              ? adminUser.name
-              : ""}
-          </NavLink>
+
+          {studentUser != null || clubUser != null || adminUser != null ? (
+            <NavLink
+              className="nav-link "
+              style={{
+                border: "1px solid #008080",
+                width: "100px",
+                height: "50px",
+                borderRadius: "30px",
+                backgroundColor: "	#008080",
+                fontSize: "20px",
+                color: "#87ceeb",
+              }}
+            >
+              {studentUser != null
+                ? studentUser.name
+                : clubUser != null
+                ? clubUser.name
+                : adminUser != null
+                ? adminUser.name
+                : ""}
+            </NavLink>
+          ) : (
+            ""
+          )}
           {studentUser != null || clubUser != null || adminUser != null ? (
             <NavLink className="nav-link" onClick={handleLogout}>
               Log Out
