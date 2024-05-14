@@ -63,6 +63,14 @@ Route::get('club_admins', function(Request $request) {
 
 Route::get('/club_admins/{id}', [club_adminController::class, 'index']);
 
+//club_admin create
+Route::post('/club_admins/',[club_adminController::class,'store']);
+//clubs update
+Route::put('/club_admins/{id}',[club_adminController::class, 'update']);
+//clubs delete
+Route::delete('/club_admins/{id}',[club_adminController::class, 'destroy']);
+
+
 //sks_admin
 Route::get('sks_admin', function(Request $request) {
     $sksadmin = sks_admin::all();

@@ -21,22 +21,23 @@ class ClubController extends Controller
   
     }
 
-    // CREATE
+    // CREATE club
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $validatedData = $request->validate(
+            [
             'club_name' => 'required',
             'club_exp' => 'required',
             'club_logo' => 'required',
-            'club_id' => 'required',
-            'student_id' => 'required',
+
         ]);
     
         $club = club::create($validatedData);
     
         return response()->json(['message' => 'Club created successfully', 'Club' => $club]);
     }
-    
+   
+
     public function show($id)
     {
         $club= club::findOrFail($id);
@@ -51,8 +52,7 @@ class ClubController extends Controller
             'club_name' => 'required',
             'club_exp' => 'required',
             'club_logo' => 'required',
-            'club_id' => 'required',
-            'student_id' => 'required',
+ 
     ]);
 
     $club = club::findOrFail($id);

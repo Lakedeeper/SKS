@@ -64,4 +64,6 @@ class clubFactory extends Factory
         ];
         
     }
+
+    
 }

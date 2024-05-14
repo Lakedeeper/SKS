@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class club extends Model
 {
@@ -16,10 +16,16 @@ class club extends Model
         'club_name',
         'club_exp',
         'club_logo',
-       // 'club_id',
-       // 'student_id',
 
     ];
+
+    public function admin()
+    {
+        return $this->hasOne(club_admin::class);
+    }
+
+
+
 
 
     protected function data(): Attribute
@@ -29,4 +35,6 @@ class club extends Model
             set: fn ($value) => json_encode($value),
         );
     } 
+
+   
 }
