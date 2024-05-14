@@ -1,0 +1,25 @@
+.NavbarHomePageAll {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px;
+    background-color: #c0e4d6;
+  }
+  
+  .LinksHomePageNavbar {
+    display: flex;
+  }
+  
+  .LinksHomePageNavbar a {
+    margin-left: 20px; 
+    text-decoration: none;
+    color: #2B7E80;
+  }
+  .LinksHomePageNavbar a:hover {
+    background-color: #b1d5c8;
+  }
+
+  .NavbarHomePageAll img {
+    max-width: 100%;
+    height: auto;
+}

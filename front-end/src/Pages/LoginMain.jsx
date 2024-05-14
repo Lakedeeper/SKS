@@ -1,9 +1,12 @@
+import NavbarLogin from "../Component/NavbarLogin";
 import "./LoginMain.css";
 import { useNavigate } from "react-router-dom";
 function LoginMain() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <NavbarLogin/>
     <div className="containerMain">
       <div className="LoginTypes">
         <button className="button1" onClick={() => navigate("/AdminLogin")}>
@@ -20,6 +23,7 @@ function LoginMain() {
         </button>
       </div>
     </div>
+   </>
   );
 }
 
