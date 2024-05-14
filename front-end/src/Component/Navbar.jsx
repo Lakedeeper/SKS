@@ -68,7 +68,7 @@ function Navbar() {
           )}
 
           {adminUser !== null ? (
-            <NavLink to="/FormAdmin" className="nav-link">
+            <NavLink to="/Admin" className="nav-link">
               FormAdmin
             </NavLink>
           ) : (
