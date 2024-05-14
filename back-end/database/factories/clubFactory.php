@@ -61,6 +61,7 @@ class clubFactory extends Factory
                // 'club_id' => '205',
                // 'student_id' => '305',
             ],
+            
         ];
         
     }
