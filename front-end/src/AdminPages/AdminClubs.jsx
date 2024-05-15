@@ -167,7 +167,8 @@ function AdminClubs() {
                 alt=""
               />
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Club Name
+                Club Name : {selectedClub !==null ?selectedClub.club_name
+:"" }
               </h1>
               <button
                 type="button"
@@ -185,9 +186,13 @@ function AdminClubs() {
               }}
             >
               <div>
-                <p>Club Manager: club manager</p>
-                <p>Mail Address: mail address</p>
-                <p>Description: description</p>
+                <p>Club Manager:                 Club Name : {selectedClub !==null ?selectedClub.club_name
+:"" }</p>
+                
+
+                <p>Description:                 Club Name : {selectedClub !==null ?selectedClub.club_exp
+
+:"" }</p>
               </div>
 
               <div className="modal-footer"></div>
