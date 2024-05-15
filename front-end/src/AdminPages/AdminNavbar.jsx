@@ -13,6 +13,15 @@ function AdminNavbar() {
     setComponents(linkName);
   };
 
+  const LogOut =()=>{
+
+    localStorage.removeItem("studentUser");
+    localStorage.removeItem("clubUser");
+    localStorage.removeItem("adminEmail");
+    navigate("/");
+    window.location.reload();
+  }
+
   return (
     <div>
       <div>
@@ -20,7 +29,7 @@ function AdminNavbar() {
         <div className="sidebar">
           <div className="side-header">
             <h3>
-              <span>SKS-Admin</span>
+              <a style={{textDecoration:'none', color:'black'}} href="events"><span>SKS-Admin</span></a>
             </h3>
           </div>
           <div className="side-content">
@@ -69,7 +78,7 @@ function AdminNavbar() {
                   <Link
                     to="/"
                     style={{ textDecoration: "none" }}
-                    onClick={() => handleLinkClick("/")}
+                    onClick={LogOut}
                   >
                     <span className="las la-door-open" />
                     <small>Exit</small>

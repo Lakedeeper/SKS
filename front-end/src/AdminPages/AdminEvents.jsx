@@ -59,10 +59,11 @@ function AdminEvents() {
             <tr key={index}>
               <th scope="row">1</th>
               <td>{event?.event_name}</td>
-              <td>{event?.event_name}</td>
-              <td>{event?.event_name}</td>
-              <td>{event?.event_name}</td>
-              <td>{event?.event_name}</td>
+              <td>{event?.subject}</td>
+              <td>{event?.start_of_event
+}</td>
+              {/* <td>{event?.event_name}</td>
+              <td>{event?.event_name}</td> */}
               <td>
                 <div className="ReviewButtonAdmin">
                   <button
@@ -126,13 +127,9 @@ function AdminEvents() {
                 elit. Dolorum, harum!
               </p>
               <p>Event Type:{selectedEvent?.event_name} </p>
-              <p>Event Name:{selectedEvent?.event_name} </p>
-              <p>Day: {selectedEvent?.event_name} </p>
-              <p>Time: {selectedEvent?.event_name} </p>
-              <p>Subject:{selectedEvent?.event_name} </p>
-              <p>Number Of Participant {selectedEvent?.event_name} </p>
-              <p>The place:{selectedEvent?.event_name} </p>
-              <p>Club Manager:{selectedEvent?.event_name} </p>
+              <p>Event Name:{selectedEvent?.exp} </p>
+              <p>Day: {selectedEvent?.start_of_event} </p>
+              
             </div>
             <div className="modal-footer">
               <button
