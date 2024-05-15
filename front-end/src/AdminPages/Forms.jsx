@@ -188,7 +188,7 @@ function Forms() {
             <th scope="col">Event Name</th>
             <th scope="col">Club Manager</th>
             <th scope="col">Date</th>
-            <th style={{ color: "black" }}>.</th>
+            <th style={{ color: "black" }}> </th>
           </tr>
         </thead>
         <tbody>
@@ -237,7 +237,7 @@ function Forms() {
             <tr key={index}>
               <th scope="row">{index + 1}</th>
               <td>{form.club_name}</td>
-              <td>{form.event_name}</td>
+              <td style={{maxWidth:'90px'}}>{form.event_name}</td>
               <td>{form.club_manager}</td>
               <td>{form.date}</td>
               <td>
