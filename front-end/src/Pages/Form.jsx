@@ -27,6 +27,30 @@ function Form() {
     state: "pending",
   });
 
+  const [formEdit, setFormEdit] = useState({
+    id: "",
+    club_name: "",
+    event_type: "",
+    event_name: "",
+    start_of_event: "",
+    end_of_event: "",
+    time: "",
+    event_subject: "",
+    number_of_participants: "",
+    adress: "",
+    image: "",
+    state: "",
+  });
+
+  const handleChange2 = (e) => {
+    const { name, value } = e.target;
+    setFormEdit({
+      ...formEdit,
+      [name]: value,
+    });
+    console.log("edit", formEdit);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -139,6 +163,40 @@ function Form() {
     }
   };
 
+  const HandleEdit = (model) => {
+    console.log("model", model);
+    setFormEdit({
+      id: model.id,
+      club_name: model.club_name,
+      event_type: model.event_type,
+      event_name: model.event_name,
+      start_of_event: model.start_of_event,
+      end_of_event: model.end_of_event,
+      time: model.time,
+      event_subject: model.event_subject,
+      number_of_participants: model.number_of_participants,
+      adress: model.adress,
+      image: model.image,
+      state: "clubOnay",
+    });
+  };
+
+  const HandleEdit2 = () => {
+    const updatedData = {
+      ...formEdit,
+      number_of_participants: parseInt(formEdit.number_of_participants, 10),
+    };
+
+    axios
+      .put(`http://127.0.0.1:8000/api/forms/${formEdit.id}`, updatedData)
+      .then((response) => {
+        console.log("Data updated successfully:", response.data);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("There was an error updating the data:", error);
+      });
+  };
   return (
     <>
       <div className="allPageForm">
@@ -276,7 +334,6 @@ function Form() {
                   <th scope="col">Date</th>
                   <th style={{ color: "black" }}></th>
                   <th style={{ color: "black" }}></th>
-                  
                 </tr>
               </thead>
               <tbody>
@@ -300,7 +357,6 @@ function Form() {
                         </button>
                       </div>
                     </td>
-                    
                   </tr>
                 ))}
               </tbody>
@@ -368,80 +424,155 @@ function Form() {
               </div>
             </div>
 
-{/*Update Button */}
-<div
-        className="modal fade"
-        id="exampleModal4"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Editting Event
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
+            {/*Update Button */}
             <div
-              className="modal-body ModalFormBody"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "baseline",
-              }}
+              className="modal fade"
+              id="exampleModal4"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
             >
-              <form action=""><label htmlFor="">Club Name:</label>
-                     <div> <input type="text" />
-                      <label htmlFor="">Event Type:</label>
-                      <input type="text" />
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">
+                      Editting Event
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div
+                    className="modal-body ModalFormBody"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "baseline",
+                    }}
+                  >
+                    <form action="">
+                      <label htmlFor="">Club Name:</label>
+                      <div>
+                        {" "}
+                        <input
+                          type="text"
+                          name="club_name"
+                          className="formInput"
+                          placeholder="Club Name:"
+                          value={formEdit.club_name}
+                          onChange={handleChange2}
+                        />
+                        <label htmlFor="">Event Type:</label>
+                        <input
+                          type="text"
+                          name="event_type"
+                          className="formInput"
+                          placeholder="Event Type:"
+                          value={formEdit.event_type}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Event Name:</label>
-                      <input type="text" />
+                        <label htmlFor="">Event Name:</label>
+                        <input
+                          type="text"
+                          name="event_name"
+                          className="formInput"
+                          placeholder="Event Name:"
+                          value={formEdit.event_name}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Starting Date:</label>
-                      <input type="date" />
+                        <label htmlFor="">Starting Date:</label>
+                        <input
+                          type="date"
+                          name="start_of_event"
+                          className="formInput"
+                          placeholder="Date Of Event:"
+                          value={formEdit.start_of_event}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Ending Date:</label>
-                      <input type="date" />
+                        <label htmlFor="">Ending Date:</label>
+                        <input
+                          type="date"
+                          name="end_of_event"
+                          className="formInput"
+                          value={formEdit.end_of_event}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Time:</label>
-                      <input type="time" />
+                        <label htmlFor="">Time:</label>
+                        <input
+                          type="time"
+                          name="time"
+                          value={formEdit.time}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Subject:</label>
-                      <input type="text" />
+                        <label htmlFor="">Subject:</label>
+                        <input
+                          type="text"
+                          name="event_subject"
+                          className="formInput"
+                          placeholder="Subject/Content of the Event:"
+                          value={formEdit.event_subject}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Participant:</label>
-                      <input type="text" />
+                        <label htmlFor="">Participant:</label>
+                        <input
+                          type="text"
+                          name="number_of_participants"
+                          className="formInput"
+                          placeholder="The Number of Participant:"
+                          value={formEdit.number_of_participants}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">The Place:</label>
-                      <input type="text" />
+                        <label htmlFor="">The Place:</label>
+                        <input
+                          type="text"
+                          name="event_place"
+                          className="formInput"
+                          placeholder="The Place where Event will be:"
+                          value={formEdit.adress}
+                          onChange={handleChange2}
+                        />
                       </div>
                       <div>
-                      <label htmlFor="">Image(Url):</label>
-                      <input type="text" />
+                        <label htmlFor="">Image(Url):</label>
+                        <input
+                          type="text"
+                          name="image"
+                          className="formInput"
+                          placeholder="Image (URL)"
+                          value={formEdit.image}
+                          onChange={handleChange2}
+                        />
                       </div>
-                      </form>
+                    </form>
+                  </div>
+
+                  <div className="modal-footer"></div>
+                  <button
+                    type="button"
+                    className="btn btn-warning"
+                    onClick={() => HandleEdit2()}
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <div className="modal-footer"></div>
-            <button type="button" class="btn btn-warning">Edit</button>
-          </div>
-        </div>
-      </div>
-
           </div>
 
           <div
@@ -498,20 +629,17 @@ function Form() {
                     </td>
                     <td>
                       <div className="ReviewButtonAdmin">
-                      <button
+                        <button
                           type="button"
                           className="btn btn-warning"
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal4"
-                          onClick={() => setSelectedForm(form)}
+                          onClick={() => HandleEdit(form)}
                         >
                           Edit
                         </button>
                       </div>
                     </td>
-
-
-                   
                   </tr>
                 ))}
               </tbody>
