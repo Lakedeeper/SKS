@@ -11,7 +11,7 @@ function NavbarLogin() {
     <img style={{width:'80px',height:'80px'}} src={Logo} alt="" />
     <img style={{width:'250px',height:'80px'}}  src={stuEventLogo} alt="" />
    <div className='LinksHomePageNavbar'>
-    <a href="Events">Event</a>
+    <a href="Events">Events</a>
     <a href="Clubs">Clubs</a>
     </div>
     </div>

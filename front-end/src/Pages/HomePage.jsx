@@ -53,11 +53,11 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div style={{ marginLeft: "550px", display: "flex" }}>
-        <div>
+      <div style={{ marginLeft: "550px", display: "flex",alignItems:'center' }}>
+        <div id="eventsTitle">
           <h1>Events</h1>
         </div>
-        <div style={{ marginLeft: "600px" }}>
+        <div id="clubsTitle" style={{ marginLeft: "600px" }}>
           <h1>Clubs</h1>
         </div>
       </div>

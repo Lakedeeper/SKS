@@ -276,6 +276,7 @@ function Form() {
                   <th scope="col">Date</th>
                   <th style={{ color: "black" }}></th>
                   <th style={{ color: "black" }}></th>
+                  <th style={{ color: "black" }}></th>
                 </tr>
               </thead>
               <tbody>
@@ -296,6 +297,19 @@ function Form() {
                           onClick={() => setSelectedForm(form)}
                         >
                           Review
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="ReviewButtonAdmin">
+                        <button
+                          type="button"
+                          className="btn btn-warning"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal4"
+                          onClick={() => setSelectedForm(form)}
+                        >
+                          Edit
                         </button>
                       </div>
                     </td>
@@ -365,6 +379,81 @@ function Form() {
                 </div>
               </div>
             </div>
+
+{/*Update Button */}
+<div
+        className="modal fade"
+        id="exampleModal4"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                Editting Event
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              className="modal-body ModalFormBody"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "baseline",
+              }}
+            >
+              <form action=""><label htmlFor="">Club Name:</label>
+                     <div> <input type="text" />
+                      <label htmlFor="">Event Type:</label>
+                      <input type="text" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Event Name:</label>
+                      <input type="text" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Starting Date:</label>
+                      <input type="date" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Ending Date:</label>
+                      <input type="date" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Time:</label>
+                      <input type="time" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Subject:</label>
+                      <input type="text" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Participant:</label>
+                      <input type="text" />
+                      </div>
+                      <div>
+                      <label htmlFor="">The Place:</label>
+                      <input type="text" />
+                      </div>
+                      <div>
+                      <label htmlFor="">Image(Url):</label>
+                      <input type="text" />
+                      </div>
+                      </form>
+            </div>
+
+            <div className="modal-footer"></div>
+            <button type="button" class="btn btn-warning">Edit</button>
+          </div>
+        </div>
+      </div>
+
           </div>
 
           <div

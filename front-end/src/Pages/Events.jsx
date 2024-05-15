@@ -77,53 +77,40 @@ function Events() {
         ))}
       </div>
 
-      <div
-        className="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabIndex={-1}
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <img
-                src={selectedEvent !== null ? selectedEvent.image : ""}
-                alt=""
-                style={{ width: "200px", height: "180px", marginRight: "10px" }}
-              />
-              <div className="headerEventsModal">
-                <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                  {selectedEvent !== null ? selectedEvent.event_name : ""}
-                </h1>
-              </div>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              />
-            </div>
-            <div className="modal-body">
-              {selectedEvent !== null ? selectedEvent.event_subject : ""}
-            </div>
-            <p style={{ marginLeft: "15px" }}>
-              {selectedEvent !== null ? selectedEvent.event_type : ""}
-            </p>
-            <div className="modal-footer">
-              <h6>Event Informations:</h6>
-              {selectedEvent !== null ? selectedEvent.adress : ""}
-            </div>
-            <p style={{ marginLeft: "15px" }}>
-              {selectedEvent !== null ? selectedEvent.start_of_event : ""} -
-              {selectedEvent !== null ? selectedEvent.end_of_event : ""} -{" "}
-              {selectedEvent !== null ? selectedEvent.time : ""}
-            </p>
+      <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+      <div className="modal-header">
+        <div className="d-flex align-items-center">
+          <img src={selectedEvent !== null ? selectedEvent.image : ""} alt="" style={{ width: "200px", height: "180px", marginRight: "10px" }} />
+          <div className="headerEventsModal">
+            <h1 className="modal-title fs-5" id="staticBackdropLabel">
+              {selectedEvent !== null ? selectedEvent.event_name : ""}
+            </h1>
           </div>
         </div>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
       </div>
+      <div className="modal-body">
+        {selectedEvent !== null ? selectedEvent.event_subject : ""}
+      </div>
+      <p style={{ marginLeft: "15px" }}>
+        {selectedEvent !== null ? selectedEvent.event_type : ""}
+      </p>
+      <div className="modal-footer justify-content-between">
+        <div>
+          <h6>Event Informations:</h6>
+          {selectedEvent !== null ? selectedEvent.adress : ""}
+        </div>
+        <p style={{ marginLeft: "15px" }}>
+          {selectedEvent !== null ? selectedEvent.start_of_event : ""} - {selectedEvent !== null ? selectedEvent.end_of_event : ""} - {selectedEvent !== null ? selectedEvent.time : ""}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </div>
   );
 }

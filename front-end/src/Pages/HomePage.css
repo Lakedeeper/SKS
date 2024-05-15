@@ -66,8 +66,25 @@
   margin-right: 50px;
 }
 
+
 .TotalSecondDiv {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+#eventsTitle,
+#clubsTitle {
+  margin-top: -50px; 
+  font-size: 24px; 
+}
+
+#eventsTitle {
+  left: 0;
+}
+
+#clubsTitle {
+  right: 0;
+}
+
+
