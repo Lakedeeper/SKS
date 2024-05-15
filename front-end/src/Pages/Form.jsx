@@ -276,7 +276,7 @@ function Form() {
                   <th scope="col">Date</th>
                   <th style={{ color: "black" }}></th>
                   <th style={{ color: "black" }}></th>
-                  <th style={{ color: "black" }}></th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -300,19 +300,7 @@ function Form() {
                         </button>
                       </div>
                     </td>
-                    <td>
-                      <div className="ReviewButtonAdmin">
-                        <button
-                          type="button"
-                          className="btn btn-warning"
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal4"
-                          onClick={() => setSelectedForm(form)}
-                        >
-                          Edit
-                        </button>
-                      </div>
-                    </td>
+                    
                   </tr>
                 ))}
               </tbody>
@@ -482,7 +470,9 @@ function Form() {
                   <th scope="col">Event Name</th>
 
                   <th scope="col">Date</th>
-                  <th style={{ color: "black" }}>.</th>
+                  <th style={{ color: "black" }}> </th>
+                  <th style={{ color: "black" }}> </th>
+                  <th style={{ color: "black" }}> </th>
                 </tr>
               </thead>
               <tbody>
@@ -506,6 +496,22 @@ function Form() {
                         </button>
                       </div>
                     </td>
+                    <td>
+                      <div className="ReviewButtonAdmin">
+                      <button
+                          type="button"
+                          className="btn btn-warning"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal4"
+                          onClick={() => setSelectedForm(form)}
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    </td>
+
+
+                   
                   </tr>
                 ))}
               </tbody>
@@ -538,7 +544,8 @@ function Form() {
                   <th scope="col">Event Name</th>
 
                   <th scope="col">Date</th>
-                  <th style={{ color: "black" }}>.</th>
+                  <th style={{ color: "black" }}> </th>
+                  <th style={{ color: "black" }}> </th>
                 </tr>
               </thead>
               <tbody>
