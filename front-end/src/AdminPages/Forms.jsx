@@ -132,6 +132,43 @@ function Forms() {
     }
   };
 
+  const RedButton = async (model) => {
+    try {
+      const updatedForm = { ...model, state: "red" };
+      const response = await axios.put(
+        `http://127.0.0.1:8000/api/forms/${model.id}/`,
+        updatedForm
+      );
+      console.log(response.data);
+
+      const fetchUpdatedForms = async () => {
+        try {
+          const response = await axios.get("http://127.0.0.1:8000/api/forms");
+
+          const pendingForms = response.data.filter(
+            (form) => form.state.trim() === "pending"
+          );
+          setPendingFrom(pendingForms);
+
+          const publishForms = response.data.filter(
+            (form) => form.state.trim() === "publish"
+          );
+          setPublishForm(publishForms);
+
+          const publishedForms = response.data.filter(
+            (form) => form.state.trim() === "published"
+          );
+          setPublishedForm(publishedForms);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+      fetchUpdatedForms();
+    } catch (error) {
+      console.error("Error updating form:", error);
+    }
+  };
+
   return (
     <div
       style={{
@@ -318,6 +355,7 @@ function Forms() {
                   type="button"
                   className="btn"
                   data-bs-dismiss="modal"
+                  onClick={() => RedButton(selectedForm)}
                 >
                   Red
                 </button>
