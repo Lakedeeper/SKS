@@ -129,7 +129,7 @@ class formFactory extends Factory
                    'time' => '11.45',
                ],
                [
-                'event_name' => 'Sanat Terapisi " Kil Atölyesi"',
+                'event_name' => 'Sanat Terapisi " Kil Atölyesi',
                  'club_name' =>'pozitif psikoloji kulübü',
                  'event_type' => 'facetoface',
                  'start_of_event' => '2024-05-03',
@@ -143,6 +143,39 @@ class formFactory extends Factory
                  'state' => 'publish',
                  'time' => '14.00',
              ],
+
+             [
+              'event_name' => 'Mezunlar Buluşması',
+                 'club_name' =>'Gıda Kulübü',
+                 'event_type' => 'facetoface',
+                 'start_of_event' => '2024-04-19',
+                 'end_of_event' => '2024-04-19',
+                 'number_of_participants'=> '120',
+               //  'form_id'=> '003',
+                 'adress'=> 'Uskudar Üniversitesi Güney Yerleşke ',
+               //  'admin_id'=> '305',
+                 'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fmezunlar-bulusmasi-44955.jpg%3Ft%3D1713339387&w=828&q=75',
+                 'event_subject'=> 'Psikoloji',
+                 'state' => 'published',
+                 'time' => '20.00',
+             ],
+
+             [
+              'event_name' => 'Mezunlar Buluşması',
+                 'club_name' =>'Adli Bilimler Bilgi Yarışması bilgi yarışması Adli Bilimler Ve Ceza Adaleti Kulübü',
+                 'event_type' => 'facetoface',
+                 'start_of_event' => '2024-05-10',
+                 'end_of_event' => '2024-05-10',
+                 'number_of_participants'=> '90',
+               //  'form_id'=> '003',
+                 'adress'=> 'Uskudar Üniversitesi Kuzey Yerleşke ',
+               //  'admin_id'=> '305',
+                 'image'=> 'https://sks.uskudar.edu.tr/_next/image?url=https%3A%2F%2Fcdn.sks.uskudar.edu.tr%2Fcontent%2Fimages%2Fadli-bilimler-bilgi-yarismasi-45113.jpg%3Ft%3D1714949708&w=828&q=75',
+                 'event_subject'=> 'Psikoloji',
+                 'state' => 'published',
+                 'time' => '12.00',
+             ],
+        
                 ];
             }
         }
