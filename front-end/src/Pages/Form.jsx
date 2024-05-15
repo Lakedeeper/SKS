@@ -11,6 +11,7 @@ function Form() {
   const [pendingForm, setPendingFrom] = useState([]);
   const [clubOnayForm, setClubOnayForm] = useState([]);
   const [publishedForm, setPublishedForm] = useState([]);
+  const [rejectedForm, setRejectedForm] = useState([]);
   const [selectedForm, setSelectedForm] = useState(null);
 
   const [formData, setFormData] = useState({
@@ -86,7 +87,12 @@ function Form() {
         const pendingForms = response.data.filter(
           (form) => form.state.trim() === "pending"
         );
+        const redForms = response.data.filter(
+          (form) => form.state.trim() === "red"
+        );
+
         console.log(pendingForms);
+        setRejectedForm(redForms);
         setPendingFrom(pendingForms);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -701,6 +707,56 @@ function Form() {
                 ))}
               </tbody>
             </table>
+{/* Rejected */}
+            <p
+              style={{
+                margin: "20px 10px",
+                fontSize: "30px",
+                textAlign: "center",
+              }}
+            >
+              Rejected
+            </p>
+            <table
+              className="table table-success table-striped"
+              style={{ width: "100%" }}
+            >
+              <thead>
+                <tr className="table-dark">
+                  <th scope="col">#</th>
+                  <th scope="col">Club Name</th>
+                  <th scope="col">Event Name</th>
+                  <th scope="col">Date</th>
+                  <th style={{ color: "black" }}></th>
+                  <th style={{ color: "black" }}></th>
+                </tr>
+              </thead>
+              <tbody>
+                {rejectedForm.map((form, index) => (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{form.club_name}</td>
+                    <td>{form.event_name}</td>
+                    <td>{form.club_manager}</td>
+                    <td>{form.date}</td>
+                    <td>
+                      <div className="ReviewButtonAdmin">
+                        <button
+                          type="button"
+                          className="btn btn-success"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal3"
+                          onClick={() => setSelectedForm(form)}
+                        >
+                          Review
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
           </div>
         </div>
       </div>
